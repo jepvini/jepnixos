@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ $(brightnessctl -d platform::kbd_backlight g) -eq 1 ]]
+then
+    touch ~/.config/.keys
+    brightnessctl -d platform::kbd_backlight s 0
+fi

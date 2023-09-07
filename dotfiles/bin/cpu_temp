@@ -1,0 +1,3 @@
+# !/usr/bin/env bash
+
+echo $(bc <<< "scale = 0;($(cat /sys/class/hwmon/hwmon4/temp1_input) / 1000)")"°C"

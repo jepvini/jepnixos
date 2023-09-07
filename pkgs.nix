@@ -1,0 +1,179 @@
+{ config, pkgs, ... }:
+{
+# Virt-Manager
+virtualisation.libvirtd.enable = true;
+programs.dconf.enable = true;
+
+# Docker
+virtualisation.docker = {
+  enable = true;
+  rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
+};
+
+# Thunar
+programs.thunar.enable = true;
+programs.thunar.plugins = with pkgs.xfce; [
+  thunar-archive-plugin # archives
+  thunar-media-tags-plugin # metadata
+  thunar-volman # volumes management
+];
+services.gvfs.enable = true; # Mount, trash, and other functionalities
+services.tumbler.enable = true; # Thumbnail support for images
+
+# Enable
+programs = {
+  fish.enable = true;
+  light.enable = true; # brightness control
+  waybar.enable = true; # bar
+  ssh.startAgent = true; # ssh command
+};
+
+# Fprint - fingerprint
+services.fprintd = {
+  enable = true;
+  tod = {
+    enable = true;
+    driver = pkgs.libfprint-2-tod1-goodix-550a;
+  };
+};
+
+# Sway
+programs.sway = {
+  enable = true;
+  wrapperFeatures.gtk = true;
+  extraPackages = with pkgs; [
+    swaylock
+    swayidle
+    swaybg
+    wl-clipboard # access to system buffer
+    wf-recorder # screen recording
+    mako # notification daemon
+    libnotify # notification library
+    wezterm # terminal
+    alacritty # backup terminal
+    rofi-wayland # laucher
+    xwayland # non wayland compatibility
+  ];
+  extraSessionCommands = ''
+  export SDL_VIDEODRIVER=wayland
+  export QT_QPA_PLATFORM=wayland
+  export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
+  export _JAVA_AWT_WM_NONREPARENTING=1
+  '';
+};
+
+# Screen sharing sway
+services.dbus.enable = true;
+xdg.portal = {
+  enable = true;
+  wlr.enable = true;
+# gtk portal needed to make gtk apps happy
+extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
+
+# List packages installed in system profile. To search run:
+# $ nix search wget
+environment.systemPackages = with pkgs; [
+
+# Cli
+alsa-utils # some audio utils like aplay
+bc # calculator -> for the watt script
+cmake # bild system generator
+ctags # fast source code browsing
+exa # fast ls
+fd # better find
+feh # image viewer
+fortune # random quote generator
+gccgo # C compiler
+git # really?
+grc # text colouriser
+grim # screenshots
+jq # JSON processor
+neofetch # system info
+nnn # files manager
+openvpn # vpn client
+pamixer  # set volume
+ripgrep # rust written grep
+spotifyd # spotify daemon
+stdenv # C compilers
+trash-cli # trash for terminal
+tree # ls files in folders
+tree-sitter # for nvim
+uwuify # UwU
+wget # retreve files using HTTP etc.
+
+#  Archives
+p7zip
+unzip
+xz
+zip
+xarchiver # for thunar
+
+# Compatibility
+steam-run # all in one bin patcher
+
+# Tui
+bashmount # mount disks
+btop # task manager
+neovim # text editor
+spotify-tui # spotify client
+vim # backup text editor
+
+# Gui
+firefox-wayland
+font-manager # useful for choosing glyphs
+libreoffice-qt # libre offive suite
+mpvpaper # live wall paper
+thunderbird # mail
+transmission-gtk # definitely not for torrents
+virt-manager # virtual machines
+pavucontrol # audio control
+
+# Non-free
+spotify
+telegram-desktop
+megasync # mega client
+
+# Python
+(python3.withPackages(ps: with ps; [  ]))
+
+# Nodejs
+nodejs
+
+# GTK
+yaru-theme # gtk themej
+
+# Libs
+
+# HTB
+aircrack-ng # wifi
+hydra-check # checks hydra modules
+john # hash
+netcat-openbsd # reverse shell
+nmap # net enumeration
+thc-hydra # ssh and other protocols
+samba # smbclient
+
+      ];
+
+# Fonts
+fonts.fonts = with pkgs; [
+  (nerdfonts.override { fonts = [ "FiraCode" "ComicShannsMono" "OpenDyslexic" ]; })
+];
+
+# Bootloader
+services.greetd = {
+  enable = true;
+  settings = {
+    default_session = {
+      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+      user = "leo";
+    };
+  };
+};
+boot.kernelParams = [ "quiet" ];
+boot.consoleLogLevel = 0;
+}

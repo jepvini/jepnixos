@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+read -n1
+
+if pgrep swaybg &> /dev/null ; then pkill swaybg ; fi
+
+~/.config/rick/rick.sh &
+~/.config/rick/roll.sh &
+
+pkill wezterm

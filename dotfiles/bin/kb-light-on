@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ -f ~/.config/.keys ]]
+then
+    brightnessctl -d platform::kbd_backlight s 1
+    rm ~/.config/.keys
+fi

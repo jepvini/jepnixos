@@ -8,8 +8,8 @@ default_border pixel 2
 for_window [class="^.*"] border pixel 2, title_format "<b> %class >> %title </b>"
 
 # gaps
-gaps inner 4
-gaps outer 0
+gaps inner 0
+gaps outer 4
 
 # colors
 

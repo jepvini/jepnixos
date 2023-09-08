@@ -8,24 +8,9 @@
   imports =
     [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./pkgs.nix
-    ./home.nix
+    ./pkgs.nix # Installed pkgs
+    ./home.nix # Home Manager
   ];
-
-  # # Limit battery charge
-  # systemd.services.BatteryTreshold = {
-  #   enable = true;
-  #   description = "Set the battery charge threshold";
-  #   after = [ "multi-user.target" ];
-  #   startLimitBurst = 0;
-  #   wantedBy = [ "multi-user.target" ];
-  #   restartIfChanged = true;
-  #   serviceConfig = {
-  #     Type = "oneshot";
-  #     Restart= "on-failure";
-  #     ExecStart = "${pkgs.bash}/bin/bash -c 'echo 75 > /sys/class/power_supply/BAT0/charge_control_start_threshold; echo > 80 /sys/class/power_supply/BAT0/charge_control_end_threshold'";
-  #   };
-  # };
 
   # Trackpoint sensibility
   systemd.services.TrackpointSensibility = {
@@ -48,7 +33,7 @@ boot = {
   loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
-    systemd-boot.configurationLimit = 5;
+    systemd-boot.configurationLimit = 5; # Limits entry number
   };
 };
 
@@ -59,19 +44,6 @@ networking = {
     enable = true;
   };
 };
-
-services = {
-# Dns
-resolved = {
-  enable = true;
-  fallbackDns = [
-    "8.8.8.8"
-    "2001:4860:4860::8844"
-  ];
-};
-tailscale.enable = false;
-  };
-
 
 # Audio
 # rtkit is optional but recommended

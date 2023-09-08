@@ -26,8 +26,21 @@ programs = {
   ssh.startAgent = true; # ssh command
 };
 
+
+# Services
+services = {
+
+# Dns
+resolved = {
+  enable = true;
+  fallbackDns = [
+    "8.8.8.8"
+    "2001:4860:4860::8844"
+  ];
+};
+
 # Fprint - fingerprint
-services.fprintd = {
+fprintd = {
   enable = true;
   tod = {
     enable = true;
@@ -37,10 +50,10 @@ services.fprintd = {
 
 # Power Management
 # Thermald
-services.thermald.enable = true;
+thermald.enable = true;
 
 # Tlp
-services.tlp = {
+tlp = {
   enable = true;
   settings = {
     CPU_BOOST_ON_BAT = 1;
@@ -51,6 +64,11 @@ services.tlp = {
     RUNTIME_PM_ON_BAT = "auto";
   };
 };
+
+# Tailscale
+tailscale.enable = false;
+};
+
 
 # Sway
 programs.sway = {

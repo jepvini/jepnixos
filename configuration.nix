@@ -115,7 +115,7 @@ console.keyMap = "us";
 users.users.leo = {
   isNormalUser = true;
   description = "leo";
-  extraGroups = [ "networkmanager" "wheel" "video" "libvirtd" "docker" ];
+  extraGroups = [ "networkmanager" "wheel" "video" "libvirtd" ];
   shell = pkgs.fish;
   packages = with pkgs; [];
 };

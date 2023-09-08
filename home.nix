@@ -22,7 +22,6 @@ in
     shellAliases = {
       v = "nvim";
       c = "clear";
-      grep = "rp";
       rm = "trash";
     };
     interactiveShellInit = ''

@@ -35,17 +35,22 @@ services.fprintd = {
   };
 };
 
+# Power Management
+# Thermald
+services.thermald.enable = true;
+
 # Tlp
 services.tlp = {
-    enable = true;
-    settings = {
-      CPU_BOOST_ON_BAT = 0;
-      CPU_SCALING_GOVERNOR_ON_BATTERY = "powersave";
-      START_CHARGE_THRESH_BAT0 = 75;
-      STOP_CHARGE_THRESH_BAT0 = 80;
-      RUNTIME_PM_ON_BAT = "auto";
-    };
+  enable = true;
+  settings = {
+    CPU_BOOST_ON_BAT = 1;
+    CPU_SCALING_GOVERNOR_ON_BATTERY = "powersave";
+    CPU_SCALING_GOVERNOR_ON_AC = "performance";
+    START_CHARGE_THRESH_BAT0 = 75;
+    STOP_CHARGE_THRESH_BAT0 = 80;
+    RUNTIME_PM_ON_BAT = "auto";
   };
+};
 
 # Sway
 programs.sway = {

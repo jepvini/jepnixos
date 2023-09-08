@@ -75,16 +75,17 @@ programs.sway = {
   enable = true;
   wrapperFeatures.gtk = true;
   extraPackages = with pkgs; [
-    swaylock
-    swayidle
-    swaybg
-    wl-clipboard # access to system buffer
-    wf-recorder # screen recording
-    mako # notification daemon
-    libnotify # notification library
-    wezterm # terminal
     alacritty # backup terminal
+    bemenu
+    libnotify # notification library
+    mako # notification daemon
     rofi-wayland # laucher
+    swaybg
+    swayidle
+    swaylock
+    wezterm # terminal
+    wf-recorder # screen recording
+    wl-clipboard # access to system buffer
     xwayland # non wayland compatibility
   ];
   extraSessionCommands = ''

@@ -62,7 +62,7 @@ set $browser firefox
 # Your preferred filemanager
 set $filemanager thunar
 # Your preferred application launcher
-set $menu rofi_run
+set $menu bemenu_exec
 
 ## 
 

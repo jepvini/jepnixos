@@ -1,4 +1,5 @@
 {
+  "layer": "bottom",
   "height": 34,
     "modules-left": ["sway/workspaces"],
     "modules-center": ["clock", "idle_inhibitor"],

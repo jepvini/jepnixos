@@ -33,7 +33,6 @@
       "max-length": 50,
       "on-click": "wezterm start -e nmtui",
       "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
-      "on-click": "iwgtk"
     },
 
     "bluetooth": {
@@ -116,14 +115,14 @@
     "custom/watt": {
       "exec": "watt",
       "interval": 1,
-      "format": "  {}",
+      "format": " {}",
     },
 
     "custom/temp":{
       "exec": "cpu_temp",
       "interval": 1,
       "return-type": "json",
-      "format": "{}",
+      "format": "{} ",
       "tooltip-format": "{tooltip}"
     },
 }

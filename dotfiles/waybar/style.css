@@ -38,7 +38,7 @@ window#waybar {
   margin-left: 0px;
   margin-top: 2px;
   margin-bottom: 2px;
-  padding: 0px 10px;
+  padding: 0px 12px;
   padding-left: 8px;
 }
 
@@ -101,7 +101,7 @@ window#waybar {
 }
 
 #battery {
-  padding: 0px 4px;
+  padding: 0px 8px;
   margin: 0px 8px;
   color: #fcfff4;
   background-color: transparent;

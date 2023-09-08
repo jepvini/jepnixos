@@ -31,7 +31,7 @@
       "format-ethernet": "󰦝 ",
       "format-disconnected": "󰤮" ,
       "max-length": 50,
-      "on-click": "wezterm start -e nmtui",
+      "on-click": "",
       "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
     },
 

@@ -14,11 +14,11 @@ gaps outer 0
 # colors
 
 # set
-set $main #69bff0
-set $inactive #acc0ce
-set $fg #fcfff4
-set $bg #282c34
-set $urgent #ef616a
+set $main #7e9cd8
+set $inactive #c8c093
+set $fg #dcd7ba
+set $bg #1f1f28
+set $urgent #e82424
 
 # class                 border  backgr. text    indicator child_border
 client.focused          $main     $main      $bg      $main     $main

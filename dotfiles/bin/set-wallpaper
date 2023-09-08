@@ -5,8 +5,10 @@ wall_eva="/home/leo/.config/imgs/set-wallpaper/eva.jpg"
 wall_gray_bg="/home/leo/.config/imgs/set-wallpaper/gray_bg.png"
 wall_puss_side="/home/leo/.config/imgs/set-wallpaper/puss_side.png"
 wall_puss_front="/home/leo/.config/imgs/set-wallpaper/puss_front.png"
+wall_kanagawa="/home/leo/.config/imgs/set-wallpaper/kanagawa.jpg"
+wall_kanagawa_black="/home/leo/.config/imgs/set-wallpaper/kanagawa_black.jpg"
 
 pkill swaybg
 sleep 0.1
 
-swaybg -m fill -i $wall_sega
+swaybg -m fill -i $wall_kanagawa_black

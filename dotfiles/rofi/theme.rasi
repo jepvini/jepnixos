@@ -1,13 +1,13 @@
 /* RASI Theme */
 
 * {
-	background:                     #282c34aa;
-	bordercolor:                    #69bff0;
+	background:                     #1f1f28aa;
+	bordercolor:                    #7e9cd8;
 	separatorcolor:                 transparent;
 	normal-background:              transparent;
-	normal-foreground:              #a3ff8c;
-	selected-background:            #69bff0;
-	selected-foreground:            #282e34;
+	normal-foreground:              #98bb6c;
+	selected-background:            #7e9cd8;
+	selected-foreground:            #1f1f28;
 	foreground:                     @normal-foreground;
 }
 

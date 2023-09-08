@@ -6,14 +6,14 @@
 }
 
 window#waybar {
-  background: rgba(40, 44, 52, 0.8);
-  border: 2px solid #69bff0;
+  background: rgba(0, 0, 0, 0.90);
+  border: 2px solid #7e9cd8;
   transition-property: background-color;
   transition-duration: .9s;
 }
 
 #workspaces button {
-  color: #fcfff4;
+  color: #dcd7ba;
   padding: 0px 10px;
   background-color: transparent;
   border: none;
@@ -21,103 +21,103 @@ window#waybar {
 
 #workspaces button:hover {
   background: inherit;
-  color: rgba(40, 44, 52, 0.8);
-  box-shadow: inset 0 -38px #69bff0;
+  color: rgba(0, 0, 0, 0.90);
+  box-shadow: inset 0 -38px #7e9cd8;
 }
 
 #workspaces button.focused {
-  background-color: #69bff0;
-  color: rgba(40, 44, 52, 0.8);
+  background-color: #7e9cd8;
+  color: rgba(0, 0, 0, 0.90);
 }
 
 #custom-power {
-  background-color: #69bff0;
-  color: rgba(40, 44, 52, 0.8);
+  background-color: #7e9cd8;
+  color: rgba(0, 0, 0, 0.90);
   border-radius: 0px;
   margin-right: 2px;
   margin-left: 0px;
   margin-top: 2px;
   margin-bottom: 2px;
-  padding: 0px 12px;
-  padding-left: 8px;
+  padding: 0px 14px;
+  padding-left: 10px;
 }
 
 #clock {
   padding: 0px 8px;
-  color: #fcfff4;
+  color: #dcd7ba;
 }
 
 
 #idle_inhibitor {
   padding: 0px 8px;
-  color: #fcfff4;
+  color: #dcd7ba;
 }
 
 #idle_inhibitor.activated {
-  color: #a3ee8c;
+  color: #98bb6c;
 }
 
 #language {
   padding: 0px 8px;
-  color: #fcfff4;
+  color: #dcd7ba;
 }
 
 #network {
   padding: 0px 8px;
-  color: #fcfff4;
+  color: #dcd7ba;
 }
 
 #bluetooth {
   padding: 0px 8px;
-  color: #fcfff4;
+  color: #dcd7ba;
 }
 
 #pulseaudio {
   padding: 0px 8px;
-  color: #fcfff4;
+  color: #dcd7ba;
 }
 
 #pulseaudio.muted {
-  color: #ef616a;
+  color: #e82424;
 }
 
 #backlight {
   padding: 0px 8px;
-  color: #fcfff4;
+  color: #dcd7ba;
 }
 
 #custom-temp {
   padding: 0px 8px;
-  color: #fcfff4;
+  color: #dcd7ba;
 }
 
 #custom-temp.red {
-  color: #ef616a;
+  color: #e82424;
 }
 
 #custom-watt {
   padding: 0px 8px;
-  color: #fcfff4;
+  color: #dcd7ba;
 }
 
 #battery {
   padding: 0px 8px;
   margin: 0px 8px;
-  color: #fcfff4;
+  color: #dcd7ba;
   background-color: transparent;
 }
 #battery.charging {
-  color: #a3ee8c;
+  color: #98bb6c;
 }
 
 #battery.warning:not(.charging) {
-  color: #ef616a;
+  color: #e82424;
 }
 
 #battery.critical:not(.charging) {
-  color: #ef616a;
+  color: #e82424;
 }
 
 #temperature.critical {
-  color: #ef616a;
+  color: #e82424;
 }

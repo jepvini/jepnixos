@@ -2,25 +2,26 @@ local wezterm = require 'wezterm'
 local act = wezterm.action
 
 -- My Palette
-Black = '#000000';
-Red = '#ef616a';
-Green = '#a3ee8c';
-Yellow = '#ffe600';
-Blue = '#003153';
-Magenta = '#cf89a6';
-Cyan = '#89cff0';
-White = '#acc0ce';
-Black_b = '#282c34';
-Red = '#ff5a5a'
-Green_b = '#93ff7c';
-Yellow_b = '#ffc600';
-Blue_b = '#004163';
-Magenta_b = '#ef99c6';
-Cyan_b = '#69bff0';
-White_b = '#fcfff4';
 
-Main = Cyan_b;
-Background = Black_b;
+Black = "#16161D";
+Red = "#C34043";
+Green = "#76946A";
+Yellow = "#C0A36E";
+Blue = "#7E9CD8";
+Magenta = "#957FB8";
+Cyan = "#6A9589";
+White = "#C8C093";
+Black_b = "#727169";
+Red_b = "#E82424";
+Green_b = "#98BB6C";
+Yellow_b = "#E6C384";
+Blue_b = "#7FB4CA";
+Magenta_b = "#938AA9";
+Cyan_b = "#7AA89F";
+White_b = "#DCD7BA";
+
+Main = Blue;
+Background = "#000000";
 
 return {
   default_cwd = "/home/leo",
@@ -31,7 +32,7 @@ return {
 
   font_size = 13,
 
-  window_background_opacity = 0.95,
+  window_background_opacity = 0.90,
   inactive_pane_hsb = {
     saturation = 0.9,
 
@@ -46,7 +47,7 @@ return {
     -- The default text color
     foreground = White_b,
     -- The default background color
-    background = Black,
+    background = Background,
 
     -- Overrides the cell background color when the current cell is occupied by the
     -- cursor and the cursor style is set to Block

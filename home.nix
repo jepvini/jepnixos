@@ -30,10 +30,6 @@ in
     '';
   };
 
-  services.spotifyd = {
-    enable = true;
-  };
-
   gtk = {
     enable = true;
     theme = {

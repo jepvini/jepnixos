@@ -12,20 +12,20 @@
     ./home.nix
   ];
 
-  # Limit battery charge
-  systemd.services.BatteryTreshold = {
-    enable = true;
-    description = "Set the battery charge threshold";
-    after = [ "multi-user.target" ];
-    startLimitBurst = 0;
-    wantedBy = [ "multi-user.target" ];
-    restartIfChanged = true;
-    serviceConfig = {
-      Type = "oneshot";
-      Restart= "on-failure";
-      ExecStart = "${pkgs.bash}/bin/bash -c 'echo 75 > /sys/class/power_supply/BAT0/charge_control_start_threshold; echo > 80 /sys/class/power_supply/BAT0/charge_control_end_threshold'";
-    };
-  };
+  # # Limit battery charge
+  # systemd.services.BatteryTreshold = {
+  #   enable = true;
+  #   description = "Set the battery charge threshold";
+  #   after = [ "multi-user.target" ];
+  #   startLimitBurst = 0;
+  #   wantedBy = [ "multi-user.target" ];
+  #   restartIfChanged = true;
+  #   serviceConfig = {
+  #     Type = "oneshot";
+  #     Restart= "on-failure";
+  #     ExecStart = "${pkgs.bash}/bin/bash -c 'echo 75 > /sys/class/power_supply/BAT0/charge_control_start_threshold; echo > 80 /sys/class/power_supply/BAT0/charge_control_end_threshold'";
+  #   };
+  # };
 
   # Trackpoint sensibility
   systemd.services.TrackpointSensibility = {
@@ -44,7 +44,6 @@
 
 # Bootloader.
 boot = {
-  kernelPackages = pkgs.linuxPackages_latest;
   initrd.kernelModules = [];
   loader = {
     systemd-boot.enable = true;
@@ -160,17 +159,6 @@ services.logind.extraConfig = ''
 # don’t shutdown when power button is short-pressed
 HandlePowerKey=ignore
 '';
-
-# Rules
-systemd.tmpfiles.rules = [
-  "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.hip}"
-];
-
-# OpenGL
-hardware.opengl.extraPackages = with pkgs; [
-  rocm-opencl-icd
-  rocm-opencl-runtime
-];
 
 # This value determines the NixOS release from which the default
 # settings for stateful data, like file locations and database versions

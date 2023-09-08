@@ -1,17 +1,12 @@
 { config, pkgs, ... }:
 {
+
+# Use latest kernel
+boot.kernelPackages = pkgs.linuxPackages_latest;
+
 # Virt-Manager
 virtualisation.libvirtd.enable = true;
 programs.dconf.enable = true;
-
-# Docker
-virtualisation.docker = {
-  enable = true;
-  rootless = {
-    enable = true;
-    setSocketVariable = true;
-  };
-};
 
 # Thunar
 programs.thunar.enable = true;
@@ -39,6 +34,18 @@ services.fprintd = {
     driver = pkgs.libfprint-2-tod1-goodix-550a;
   };
 };
+
+# Tlp
+services.tlp = {
+    enable = true;
+    settings = {
+      CPU_BOOST_ON_BAT = 0;
+      CPU_SCALING_GOVERNOR_ON_BATTERY = "powersave";
+      START_CHARGE_THRESH_BAT0 = 75;
+      STOP_CHARGE_THRESH_BAT0 = 80;
+      RUNTIME_PM_ON_BAT = "auto";
+    };
+  };
 
 # Sway
 programs.sway = {
@@ -118,7 +125,9 @@ steam-run # all in one bin patcher
 # Tui
 bashmount # mount disks
 btop # task manager
+ncspot # spotify client
 neovim # text editor
+powertop # power usage info
 spotify-tui # spotify client
 vim # backup text editor
 

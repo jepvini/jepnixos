@@ -91,6 +91,10 @@ window#waybar {
   color: #fcfff4;
 }
 
+#custom-temp.red {
+  color: #ef616a;
+}
+
 #custom-watt {
   padding: 0px 8px;
   color: #fcfff4;

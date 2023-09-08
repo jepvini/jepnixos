@@ -23,6 +23,7 @@ in
       v = "nvim";
       c = "clear";
       rm = "trash";
+      edit = "cd /etc/nixos";
     };
     interactiveShellInit = ''
     set fish_greeting # Disable greeting

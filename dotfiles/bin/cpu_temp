@@ -1,3 +1,14 @@
 # !/usr/bin/env bash
 
-echo $(bc <<< "scale = 0;($(cat /sys/class/hwmon/hwmon4/temp1_input) / 1000)")"°C"
+TEMP_FILE=/sys/class/hwmon/hwmon4/temp1_input
+TEMP=$(cat "$TEMP_FILE")
+TEMP_FORMATTED=$(bc <<< "scale = 0;($TEMP / 1000)")"°C";
+
+
+if [[ $TEMP -lt 60000 ]] then
+  printf '{"text":"󰔏","class":"white","tooltip": "%s"}' "$TEMP_FORMATTED";
+elif [[ $TEMP -lt 80000 ]] then
+  printf '{"text":"󰔏","class":"red","tooltip": "%s"}' "$TEMP_FORMATTED";
+elif [[ $TEMP -lt 100000 ]] then
+  printf '{"text":"󰔏!","class":"red","tooltip": "%s"}' "$TEMP_FORMATTED";
+fi

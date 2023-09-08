@@ -91,8 +91,8 @@ bindsym $mod+m exec swaymsg "output eDP-1 enable" && swaylock -f
 
 exec swayidle -w \
        timeout 300 'swaylock -f -c 000000' \
-       timeout 600 'swaymsg "output * dpms off"' \
-       resume 'swaymsg "output * dpms on"  && swaymsg "output eDP-1 enable"' \
+       timeout 600 'swaymsg "output * dpms off" && kb-light-off' \
+       resume 'swaymsg "output * dpms on"  && swaymsg "output eDP-1 enable" && kb-light-on' \
        before-sleep 'swaylock -f -c 000000 && swaymsg "output eDP-1 enable" && pkill spotifyd'
 
 ### Key bindings
@@ -230,8 +230,9 @@ exec swayidle -w \
        bindsym $mod+Control+$right resize grow   width  50 px or 1 ppt
 
 # backlight
-       bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
-       bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10
+       exec --no-startup-id light -s sysfs/backlight/intel_backlight -N 1
+       bindsym XF86MonBrightnessDown exec --no-startup-id light -s sysfs/backlight/intel_backlight -U 10
+       bindsym XF86MonBrightnessUp exec --no-startup-id light -s sysfs/backlight/intel_backlight -A 10
 
 # pamixer
        bindsym XF86AudioMute        exec --no-startup-id pamixer -t

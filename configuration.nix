@@ -23,7 +23,7 @@
     serviceConfig = {
       Type = "oneshot";
       Restart= "on-failure";
-      ExecStart = "${pkgs.bash}/bin/bash -c 'echo 10 > /sys/class/input/input5/device/sensitivity'";
+      ExecStart = "${pkgs.bash}/bin/bash -c '/etc/nixos/services/TrackPointSensitivity'";
     };
   };
 

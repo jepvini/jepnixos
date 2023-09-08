@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
-bemenu-run -i -p run --accept-single \
+bemenu-run -i -p "run"  --accept-single \
   -H 36 --fn "ComicShannsMono Nerd Font"\
-  --ch -10\
-  --cw -1\
   --hp 8\
+  --cf "#000000"\
   --tb "#e82424"\
   --tf "#000000"\
   --fb "#000000"\

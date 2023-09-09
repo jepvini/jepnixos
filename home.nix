@@ -13,12 +13,6 @@ in
 
       programs.fish = {
         enable = true;
-        plugins = [
-      # Enable a plugin (here grc for colorized command output) from nixpkgs
-      { name = "async-prompt"; src = pkgs.fishPlugins.async-prompt.src; }
-      { name = "colored-man-pages"; src = pkgs.fishPlugins.colored-man-pages.src; }
-      { name = "z"; src = pkgs.fishPlugins.z.src; }
-    ];
     shellAliases = {
       v = "nvim";
       c = "clear";

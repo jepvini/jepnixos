@@ -174,7 +174,18 @@ pavucontrol # audio control
 # Non-free
 spotify
 telegram-desktop
-megasync # mega client
+
+# Fish
+fishPlugins.done
+fishPlugins.fzf-fish
+fishPlugins.forgit
+fishPlugins.hydro
+fzf
+fishPlugins.grc
+grc
+
+rclone
+rclone-browser
 
 # Python
 (python3.withPackages(ps: with ps; [

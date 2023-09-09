@@ -55,69 +55,11 @@ in
   };
 
 
+  imports = [
+    ./dotfiles/dotfiles.nix
+    ./themes/kanagawa/kanagawa.nix
+    # ./themes/rick/rick.nix
+  ];
 
-# Config
-xdg.configFile = {
-  "bin" = {
-    recursive = true;
-    source = ./dotfiles/bin;
-    target = "bin";
-  };
-  "imgs" = {
-    recursive = true;
-    source = ./dotfiles/imgs;
-    target = "imgs";
-  };
-  "mako" = {
-    recursive = true;
-    source = ./dotfiles/mako;
-    target = "mako";
-  };
-  "neofetch" = {
-    recursive = true;
-    source = ./dotfiles/neofetch;
-    target = "neofetch";
-  };
-  "nvim" = {
-    recursive = true;
-    source = ./dotfiles/nvim;
-    target = "nvim";
-  };
-  "rofi" = {
-    recursive = true;
-    source = ./dotfiles/rofi;
-    target = "rofi";
-  };
-  "spotifyd" = {
-    recursive = true;
-    source = ./dotfiles/spotifyd;
-    target = "spotifyd";
-  };
-  "sway" = {
-    recursive = true;
-    source = ./dotfiles/sway;
-    target = "sway";
-  };
-  "swaylock" = {
-    recursive = true;
-    source = ./dotfiles/swaylock;
-    target = "swaylock";
-  };
-  "waybar" = {
-    recursive = true;
-    source = ./dotfiles/waybar;
-    target = "waybar";
-  };
-  "wezterm" = {
-    recursive = true;
-    source = ./dotfiles/wezterm;
-    target = "wezterm";
-  };
-  "rick" = {
-    recursive = true;
-    source = ./dotfiles/rick;
-    target = "rick";
-  };
 };
-  };
 }

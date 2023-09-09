@@ -1,0 +1,14 @@
+# !/usr/bin/env bash
+
+TEMP_FILE=/sys/class/hwmon/hwmon4/temp1_input
+TEMP=$(cat "$TEMP_FILE")
+TEMP_FORMATTED=$(bc <<< "scale = 0;($TEMP / 1000)")"°C";
+
+
+if [[ $TEMP -lt 70000 ]] then
+printf '{"text":"󰔏","class":"white","tooltip": "%s"}' "$TEMP_FORMATTED";
+elif [[ $TEMP -lt 90000 ]] then
+printf '{"text":"󰔏","class":"red","tooltip": "%s"}' "$TEMP_FORMATTED";
+else
+printf '{"text":"CPU OVER 90°C","class":"red","tooltip": "%s"}' "$TEMP_FORMATTED";
+fi

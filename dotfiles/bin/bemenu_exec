@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 bemenu-run -i -p "run" \
-  -H 36 --fn "ComicShannsMono Nerd Font"\
+  -H 34 --fn "ComicShannsMono Nerd Font"\
   --hp 8\
   --cf "#000000"\
   --tb "#e82424"\
@@ -11,5 +11,7 @@ bemenu-run -i -p "run" \
   --nb "#000000"\
   --nf "#dcd7ba"\
   --hb "#7e9cd8"\
-  --hf "#000000"
+  --hf "#000000"\
+  --ab "#000000"\
+  --af "#dcd7ba"
 

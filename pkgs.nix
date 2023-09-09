@@ -18,6 +18,12 @@ programs.thunar.plugins = with pkgs.xfce; [
 services.gvfs.enable = true; # Mount, trash, and other functionalities
 services.tumbler.enable = true; # Thumbnail support for images
 
+# Neovim
+programs.neovim = {
+  enable = true;
+  defaultEditor = true;
+};
+
 # Enable
 programs = {
   fish.enable = true;
@@ -150,7 +156,6 @@ steam-run # all in one bin patcher
 bashmount # mount disks
 btop # task manager
 ncspot # spotify client
-neovim # text editor
 powertop # power usage info
 spotify-tui # spotify client
 vim # backup text editor

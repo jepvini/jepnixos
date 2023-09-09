@@ -1,4 +1,4 @@
-# !/bin/bash
+# !/usr/bin/env bash
 
 wall_sega="/home/leo/.config/imgs/set-wallpaper/sega.jpg"
 wall_eva="/home/leo/.config/imgs/set-wallpaper/eva.jpg"
@@ -11,4 +11,4 @@ wall_kanagawa_black="/home/leo/.config/imgs/set-wallpaper/kanagawa_black.jpg"
 pkill swaybg
 sleep 0.1
 
-swaybg -m fill -i $wall_kanagawa_black
+swaybg -m fill -i "$(cat ~/.config/sway/wall)"

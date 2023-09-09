@@ -1,0 +1,253 @@
+# /sys/devices/pci0000:00/0000:00:14.3/PNP0C09:00/VPC2004:00/conservation_mode -> limit battery charge to 60%
+# font
+font ComicShannsMono Nerd Font 11
+
+# border & title
+default_border pixel 2
+# for_window [title="^.*"] title_format ""
+for_window [class="^.*"] border pixel 2, title_format "<b> %class >> %title </b>"
+
+# gaps
+gaps inner 4
+gaps outer 0
+
+# colors
+
+# set
+set $main #69bff0
+set $inactive #acc0ce
+set $fg #fcfff4
+set $bg #282c34
+set $urgent #ef616a
+
+# class                 border  backgr. text    indicator child_border
+client.focused          $main     $main      $bg      $main     $main
+client.focused_inactive $inactive $inactive  $bg      $inactive $inactive
+client.unfocused        $bg       $bg        $fg      $bg       $bg
+client.urgent           $urgent   $urgent    $bg      $urgent   $urgent
+
+# keyboard layout
+input * {
+  tap enabled
+    xkb_layout us
+}
+
+# displays
+set $laptop eDP-1
+bindswitch lid:on output $laptop disable
+bindswitch lid:off output $laptop enable
+
+# focus doesn't follow mouse pointer
+focus_follows_mouse no
+
+# set inactive windows transparency
+exec /home/leo/.config/sway/inactive-windows-transparency.py
+
+# exec spotifyd
+exec spotifyd
+
+### Variables
+#
+# Logo key. Use mod1 for Alt.
+set $mod mod4
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+# Your preferred terminal emulator
+set $term wezterm
+# Your preferred browser
+set $browser firefox
+# Your preferred filemanager
+set $filemanager thunar
+# Your preferred application launcher
+set $menu rofi_run
+set $power rofi_logout
+
+## 
+
+# assign workspaces
+# assign [title=""] workspace 10
+
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# output * bg /home/leo/Pictures/Wallpapers/lap.jpg fill
+exec set-wallpaper
+
+# Pause wallpaper
+bindsym $mod+p exec echo 'cycle pause' | socat - /tmp/mpv-socket
+
+### Idle configuration
+
+bindsym $mod+Shift+o exec swaymsg "output * dpms off" && kb-light-of
+bindsym $mod+Shift+i exec swaymsg "output * dpms on" && kb-light-on
+
+bindsym $mod+o exec swaymsg "output eDP-1 disable" && kb-light-off
+bindsym $mod+i exec swaymsg "output eDP-1 enable" && kb-light-on
+bindsym $mod+m exec swaymsg "output eDP-1 enable" && swaylock -f
+
+# swayidle
+
+exec swayidle -w \
+       timeout 300 'swaylock -f -c 000000' \
+       timeout 600 'swaymsg "output * dpms off"' \
+       resume 'swaymsg "output * dpms on"  && swaymsg "output eDP-1 enable"' \
+       before-sleep 'swaylock -f -c 000000 && swaymsg "output eDP-1 enable" && pkill spotifyd'
+
+### Key bindings
+#
+# Basics:
+#
+# Start a terminal
+       bindsym $mod+Return exec $term
+       bindsym $mod+t exec $term
+
+# Start a browser
+       bindsym $mod+c exec $browser
+
+# Start a filemanager
+       bindsym $mod+f exec $filemanager
+
+# Kill focused window
+       bindsym $mod+q kill
+       bindsym Alt+q kill
+
+# Start your launcher
+       bindsym $mod+space exec $menu
+
+# Start your logout-commands
+       bindsym $mod+x exec $power
+
+# Start nmtui
+       bindsym $mod+u exec $term start nmtui
+
+# Start blueman
+# bindsym $mod+y exec blueman-manager
+
+# Spotify-tui in workspace 0
+       bindsym $mod+s exec swaymsg "workspace 0; exec wezterm start spt"
+
+# Reload the configuration file
+       bindsym $mod+Shift+c reload
+
+# Take screenshot
+       bindsym $mod+Shift+Control+p exec grim /home/leo/Pictures/screenshot.png
+
+#
+# Moving around:
+#
+# Move your focus around
+       bindsym $mod+$left focus left
+       bindsym $mod+$down focus down
+       bindsym $mod+$up focus up
+       bindsym $mod+$right focus right
+# Or use $mod+[up|down|left|right]
+       bindsym $mod+Left focus left
+       bindsym $mod+Down focus down
+       bindsym $mod+Up focus up
+       bindsym $mod+Right focus right
+       bindsym $mod+a focus left
+       bindsym $mod+d focus right
+
+# Move the focused window with the same, but add Shift
+       bindsym $mod+Shift+$left move left
+       bindsym $mod+Shift+$down move down
+       bindsym $mod+Shift+$up move up
+       bindsym $mod+Shift+$right move right
+# Ditto, with arrow keys
+       bindsym $mod+Shift+Left move left
+       bindsym $mod+Shift+Down move down
+       bindsym $mod+Shift+Up move up
+       bindsym $mod+Shift+Right move right
+
+# Scratchpad, Floating
+       bindsym $mod+Control+space floating toggle
+
+# Workspaces:
+
+# switch to next or previous workspace
+       bindsym Alt+Left workspace prev
+       bindsym Alt+Right workspace next
+       bindsym Alt+$left workspace prev
+       bindsym ALt+$right workspace next
+       bindsym Alt+a workspace prev
+       bindsym Alt+d workspace next
+
+# Switch to workspace
+       bindsym $mod+1 workspace number 1
+       bindsym $mod+2 workspace number 2
+       bindsym $mod+3 workspace number 3
+       bindsym $mod+4 workspace number 4
+       bindsym $mod+5 workspace number 5
+       bindsym $mod+6 workspace number 6
+       bindsym $mod+7 workspace number 7
+       bindsym $mod+8 workspace number 8
+       bindsym $mod+9 workspace number 9
+       bindsym $mod+0 workspace number 0
+
+# Move focused container to workspace
+       bindsym Alt+1 move container to workspace number 1; workspace number 1
+       bindsym Alt+2 move container to workspace number 2; workspace number 2
+       bindsym Alt+3 move container to workspace number 3; workspace number 3
+       bindsym Alt+4 move container to workspace number 4; workspace number 4
+       bindsym Alt+5 move container to workspace number 5; workspace number 5
+       bindsym Alt+6 move container to workspace number 6; workspace number 6
+       bindsym Alt+7 move container to workspace number 7; workspace number 7
+       bindsym Alt+8 move container to workspace number 8; workspace number 8
+       bindsym Alt+9 move container to workspace number 9; workspace number 9
+       bindsym Alt+0 move container to workspace number 0; workspace number 0
+
+# Layout stuff:
+
+# Make the current focus fullscreen
+       bindsym $mod+g fullscreen
+
+# Scratchpad:
+#
+# Sway has a "scratchpad", which is a bag of holding for windows.
+# You can send windows there and get them back later.
+
+# Move the currently focused window to the scratchpad
+       bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+       bindsym $mod+minus scratchpad show
+
+# layout toggle, keycode 23 is Tab
+       bindcode Alt+23 layout toggle tabbed split
+       bindcode $mod+23 layout toggle splitv splith
+
+# Size
+       bindsym $mod+Control+Up    resize grow   width  1000 px or 20 ppt
+       bindsym $mod+Control+Down  resize shrink width  1000 px or 20 ppt
+       bindsym $mod+Control+Left  resize shrink width  50 px or 1 ppt
+       bindsym $mod+Control+Right resize grow   width  50 px or 1 ppt
+       bindsym $mod+Control+$up    resize grow   width  1000 px or 20 ppt
+       bindsym $mod+Control+$down  resize shrink width  1000 px or 20 ppt
+       bindsym $mod+Control+$left  resize shrink width  50 px or 1 ppt
+       bindsym $mod+Control+$right resize grow   width  50 px or 1 ppt
+
+# backlight
+       bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
+       bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10
+
+# pamixer
+       bindsym XF86AudioMute        exec --no-startup-id pamixer -t
+       bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
+       bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
+       bindsym XF86AudioMicMute    exec --no-startup-id pamixer --source "alsa_input.pci-0000_03_00.6.HiFi__hw_acp__source" -t
+
+# Status Bar:
+
+# waybar launcher 
+
+       bar swaybar_command waybar
+
+       include /etc/sway/config.d/*
+
+# notification - mako
+
+exec mako -c ~/.config/mako/config

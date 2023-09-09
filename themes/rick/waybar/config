@@ -1,0 +1,124 @@
+{
+    "height": 34,
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["clock", "idle_inhibitor"],
+    "modules-right": ["bluetooth", "network", "pulseaudio", "backlight", "custom/temp", "custom/watt", "battery", "custom/power"],
+
+    "sway/workspaces": {
+      "disable-scroll": true,
+      "all-outputs": true,
+      "format": "{icon}",
+      "format-icons": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "4": "4",
+          "5": "5",
+          "6": "6",
+          "7": "7",
+          "8": "8",
+          "9": "9",
+          "0": "",
+          "urgent": "",
+          "focused": "",
+          "default": ""
+      }
+    },
+
+    "network": {
+        "format-wifi": "󰤨  {essid} ({signalStrength}%)",
+        "format-ethernet": "󰦝",
+        "format-disconnected": "󰤮",
+        "max-length": 50,
+        "on-click": "rofi_wifi_menu",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+        "on-click": "iwgtk"
+    },
+
+    "bluetooth": {
+  	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+  	"format": "",
+  	"format-disabled": "", // an empty format will hide the module
+  	"format-connected": " {device_alias}",
+  	"tooltip-format": "{controller_alias}\t{controller_address}",
+  	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+  	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
+    "backlight": {
+        "device": "amd_gpu",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+    },
+
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        // "format-alt": "{:%Y-%m-%d}"
+    },
+
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 20,
+            "critical": 10
+        },
+        "interval": 5,
+        "format": "{icon} {capacity}%",
+        "format-charging": "{capacity}% 󰂄",
+        /* "format-plugged": "{capacity}% ", */
+        "format-alt": "{icon} {time}",
+        /* "format-full": "", */
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}%",
+        "format-bluetooth": " {volume}%",
+        "format-bluetooth-muted": " {volume}%",
+        "format-muted": "{icon} {volume}%",
+        "format-source": "{volume}% ",
+        /* "format-source-muted": " ",*/
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""],
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "custom/power": {
+        /*"format": "",*/
+        "format": "",
+        /*"exec": "home-icon",*/
+        /*"interval": 1,*/
+        /*"format": "a",*/
+        "on-click": "rofi_logout"
+    },
+
+    "custom/watt": {
+        "exec": "watt",
+        "interval": 1,
+        "format": " {}",
+    },
+
+    "custom/temp":{
+        "exec": "./cpu_temp.sh",
+        "interval": 1,
+        "format": "󰔏 {}"
+    },
+}
+

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+light -s sysfs/leds/tpacpi::kbd_backlight -I

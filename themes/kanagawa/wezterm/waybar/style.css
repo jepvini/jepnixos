@@ -1,0 +1,129 @@
+* {
+  font-family: ComicShannsMono Nerd Font;
+  font-size: 18px;
+  border-radius: 0px;
+  min-height: 34px;
+}
+
+window#waybar {
+  /* background: rgba(0, 0, 0, 0.90); */
+  /* border: 2px solid #7e9cd8; */
+  background: transparent;
+  border: 0px  transparent;
+  transition-property: background-color;
+  transition-duration: .9s;
+}
+
+#workspaces button {
+  color: #dcd7ba;
+  padding: 0px 10px;
+  background-color: transparent;
+  border: none;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+#workspaces button:hover {
+  background: inherit;
+  color: rgba(0, 0, 0, 0.90);
+  box-shadow: inset 0 -38px #7e9cd8;
+}
+
+#workspaces button.focused {
+  background-color: #7e9cd8;
+  color: rgba(0, 0, 0, 0.90);
+}
+
+#custom-power {
+  background-color: #7e9cd8;
+  color: rgba(0, 0, 0, 0.90);
+  border-radius: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding: 0px 16px;
+  padding-left: 10px;
+}
+
+#clock {
+  padding: 0px 8px;
+  color: #dcd7ba;
+}
+
+
+#idle_inhibitor {
+  padding: 0px 8px;
+  color: #dcd7ba;
+}
+
+#idle_inhibitor.activated {
+  color: #98bb6c;
+}
+
+#language {
+  padding: 0px 8px;
+  color: #dcd7ba;
+}
+
+#network {
+  padding: 0px 8px;
+  color: #dcd7ba;
+}
+
+#bluetooth {
+  padding: 0px 8px;
+  color: #dcd7ba;
+}
+
+#pulseaudio {
+  padding: 0px 8px;
+  color: #dcd7ba;
+}
+
+#pulseaudio.muted {
+  color: #e82424;
+}
+
+#backlight {
+  padding: 0px 8px;
+  color: #dcd7ba;
+}
+
+#custom-temp {
+  padding: 0px 8px;
+  color: #dcd7ba;
+}
+
+#custom-temp.red {
+  color: #e82424;
+}
+
+#custom-watt {
+  padding: 0px 8px;
+  color: #dcd7ba;
+}
+
+#battery {
+  padding: 0px 8px;
+  margin: 0px 8px;
+  color: #dcd7ba;
+  background-color: transparent;
+}
+#battery.charging {
+  color: #98bb6c;
+}
+
+#battery.warning:not(.charging) {
+  color: #e82424;
+}
+
+#battery.critical:not(.charging) {
+  color: #e82424;
+}
+
+#temperature.critical {
+  color: #e82424;
+}

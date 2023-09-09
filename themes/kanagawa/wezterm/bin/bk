@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+
+ssh-add /home/leo/.ssh/starless # adds ssh key to keychain
+mkdir -p $HOME/.git_repos
+
+pushd $HOME/.git_repos
+
+echo "starless"
+
+DIR=$HOME/.git_repos/starless
+
+if [ ! -d "$DIR" ]; then
+  git clone git@github.com:leo1359531/starless.git
+fi
+
+pushd "$DIR"
+
+notify-send "Running backup"
+cp -r /etc/nixos "$DIR" 
+git add .
+git commit -m "($date)";
+git push -u origin main;
+
+popd
+
+echo "nvim"
+
+NVIM_DIR=$HOME/.git_repos/jepnvim
+
+if [ ! -d "$NVIM_DIR" ]; then
+  git clone git@github.com:leo1359531/jepnvim.git
+fi
+
+mkdir -p "$NVIM_DIR"
+
+pushd "$NVIM_DIR"
+
+cp -r /etc/nixos/dotfiles/nvim/* "$NVIM_DIR"
+git commit -m "($date)";
+git push -u origin main;
+
+popd
+
+echo "nixos"
+
+NIXOS_DIR=$HOME/.git_repos/jepnixos
+
+if [ ! -d "$NIXOS_DIR" ]; then
+  git clone git@github.com:leo1359531/jepnixos.git
+fi
+
+pushd "$NIXOS_DIR"
+
+cp -r /etc/nixos/* "$NIXOS_DIR"
+
+echo "# ignore files from pubblic github repo
+hardware-configuration.nix
+theme/
+dotfiles/bin/bk
+dotfiles/spotifyd/
+dotfiles/spotify-tui/
+" > .gitignore
+
+git config advice.addIgnoredFile false
+git add *
+git commit -m "$(date)"
+git push -u origin main
+
+popd
+
+popd

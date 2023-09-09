@@ -10,4 +10,4 @@
 - bar: waybar
 - text editor: neovim
 
-The neovim config is the same as the [jepnvim]("https://github.com/leo1359531/jepnvim.git") one
+The neovim config is the same as the [jepnvim](https://github.com/leo1359531/jepnvim) one

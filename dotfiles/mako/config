@@ -1,8 +1,0 @@
-font=ComicShannsMono Nerd Font 11
-background-color=#1f1f28aa
-text-color=#dcd7ba
-border-color=#7e9cd8
-default-timeout=3000
-
-[urgency=high]
-text-color=#e82424

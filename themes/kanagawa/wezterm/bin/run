@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-gcc $1 -Wall -O2 -lm 
-
-./a.out
-
-rm a.out

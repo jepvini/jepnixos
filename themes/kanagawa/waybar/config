@@ -110,7 +110,7 @@
       /* "format": "", */
       "format": "",
       /* "format": "", */
-      "on-click": "rofi_logout"
+      "on-click": "bemenu_logout"
     },
 
     "custom/watt": {

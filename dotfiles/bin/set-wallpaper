@@ -1,4 +1,4 @@
-# !/usr/bin/env bash
+#!/usr/bin/env bash
 
 wall_sega="/home/leo/.config/imgs/set-wallpaper/sega.jpg"
 wall_eva="/home/leo/.config/imgs/set-wallpaper/eva.jpg"
@@ -10,6 +10,5 @@ wall_kanagawa_black="/home/leo/.config/imgs/set-wallpaper/kanagawa_black.jpg"
 
 pkill swaybg
 sleep 0.1
-
 
 ~/.config/sway/wall.sh

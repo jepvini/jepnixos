@@ -40,7 +40,8 @@ services = {
 resolved = {
   enable = true;
   fallbackDns = [
-    "1.1.1.1"
+    "208.67.222.222"
+    "2620:119:35::35"
   ];
 };
 
@@ -133,6 +134,7 @@ nnn # files manager
 openvpn # vpn client
 pamixer  # set volume
 ripgrep # rust written grep
+shellcheck # checks shell scripts
 spotifyd # spotify daemon
 stdenv # C compilers
 trash-cli # trash for terminal

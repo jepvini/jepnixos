@@ -11,4 +11,5 @@ wall_kanagawa_black="/home/leo/.config/imgs/set-wallpaper/kanagawa_black.jpg"
 pkill swaybg
 sleep 0.1
 
-swaybg -m fill -i "$(cat ~/.config/sway/wall)"
+
+~/.config/sway/wall.sh

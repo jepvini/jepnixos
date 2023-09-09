@@ -40,8 +40,7 @@ services = {
 resolved = {
   enable = true;
   fallbackDns = [
-    "8.8.8.8"
-    "2001:4860:4860::8844"
+    "1.1.1.1"
   ];
 };
 
@@ -176,7 +175,9 @@ telegram-desktop
 megasync # mega client
 
 # Python
-(python3.withPackages(ps: with ps; [  ]))
+(python3.withPackages(ps: with ps; [
+  i3ipc
+]))
 
 # Nodejs
 nodejs

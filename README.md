@@ -1,8 +1,13 @@
 # NixOs config
 
+*by jep*
+
+### info
+
 - wm: sway
 - terminal: wezterm
-- launcher: rofi-wayland
+- launcher: bemenu
 - bar: waybar
+- text editor: neovim
 
-the nvim folder is the same as the jepnvim reposity
+The neovim config is the same as the [jepnvim]("https://github.com/leo1359531/jepnvim.git") one

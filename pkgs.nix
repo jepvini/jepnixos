@@ -197,7 +197,7 @@ rclone-browser
 nodejs
 
 # GTK
-yaru-theme # gtk themej
+# yaru-theme # gtk themej
 
 # Libs
 
@@ -210,12 +210,27 @@ nmap # net enumeration
 thc-hydra # ssh and other protocols
 samba # smbclient
 
-      ];
+# gitPkgs
+gitPkgs.nofetch
+
+];
+
 
 # Fonts
 fonts.fonts = with pkgs; [
   (nerdfonts.override { fonts = [ "FiraCode" "ComicShannsMono" "OpenDyslexic" ]; })
 ];
+
+# GTK
+# Oddly, NixOS doesn't have a module for this yet.
+environment.etc."xdg/gtk-2.0/gtkrc".text = ''
+gtk-theme-name = "Kanagawa-B"
+'';
+
+environment.etc."xdg/gtk-3.0/settings.ini".text = ''
+[Settings]
+gtk-theme-name = Kanagawa-B
+'';
 
 # Bootloader
 services.greetd = {

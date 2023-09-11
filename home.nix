@@ -13,15 +13,12 @@ in
 
       programs.fish = {
         enable = true;
-    shellAliases = {
-      v = "nvim";
-      c = "clear";
-      rm = "trash";
-      edit = "cd /etc/nixos";
-    };
-    interactiveShellInit = ''
-    set fish_greeting # Disable greeting
-    '';
+        shellAliases = {
+          v = "nvim";
+          c = "clear";
+          rm = "trash";
+          edit = "cd /etc/nixos";
+        };
   };
 
   gtk = {
@@ -49,6 +46,7 @@ in
   };
 
 
+  # Theme selector
   imports = [
     ./dotfiles/dotfiles.nix
     ./themes/kanagawa/kanagawa.nix

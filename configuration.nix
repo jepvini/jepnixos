@@ -10,6 +10,7 @@
     ./hardware-configuration.nix
     ./pkgs.nix # Installed pkgs
     ./home.nix # Home Manager
+    ./my-pkgs/default.nix
   ];
 
   # Defaults apps

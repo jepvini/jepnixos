@@ -117,6 +117,7 @@ environment.systemPackages = with pkgs; [
 
 # Cli
 alsa-utils # some audio utils like aplay
+bat # cat with colors
 bc # calculator -> for the watt script
 cmake # bild system generator
 ctags # fast source code browsing
@@ -126,7 +127,6 @@ feh # image viewer
 fortune # random quote generator
 gccgo # C compiler
 git # really?
-grc # text colouriser
 grim # screenshots
 jq # JSON processor
 neofetch # system info
@@ -146,9 +146,9 @@ wget # retreve files using HTTP etc.
 #  Archives
 p7zip
 unzip
+xarchiver # for thunar
 xz
 zip
-xarchiver # for thunar
 
 # Compatibility
 steam-run # all in one bin patcher
@@ -166,10 +166,10 @@ firefox-wayland
 font-manager # useful for choosing glyphs
 libreoffice-qt # libre offive suite
 mpvpaper # live wall paper
+pavucontrol # audio control
 thunderbird # mail
 transmission-gtk # definitely not for torrents
 virt-manager # virtual machines
-pavucontrol # audio control
 
 # Non-free
 spotify
@@ -178,10 +178,11 @@ telegram-desktop
 # Fish
 fishPlugins.done
 fishPlugins.fzf-fish
-fishPlugins.forgit
-fishPlugins.hydro
-fzf
 fishPlugins.grc
+fishPlugins.hydro
+fishPlugins.puffer
+fishPlugins.sponge
+fzf
 grc
 
 rclone

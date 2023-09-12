@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
 swaymsg "output eDP-1 enable"
+pkill spotufyd
 
 swaylock

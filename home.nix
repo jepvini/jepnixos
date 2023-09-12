@@ -18,6 +18,7 @@ in
           c = "clear";
           rm = "trash";
           edit = "cd /etc/nixos";
+          cat = "bat";
         };
   };
 

@@ -22,23 +22,23 @@ in
         };
   };
 
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Nordic";
-      package = pkgs.nordic;
-    };
-  };
-
-  home.pointerCursor = {
-    name = "Adwaita";
-    package = pkgs.gnome.adwaita-icon-theme;
-    size = 24;
-    x11 = {
-      enable = true;
-      defaultCursor = "Adwaita";
-    };
-  };
+  # gtk = {
+  #   enable = true;
+  #   theme = {
+  #     name = "Nordic";
+  #     package = pkgs.nordic;
+  #   };
+  # };
+  #
+  # home.pointerCursor = {
+  #   name = "Adwaita";
+  #   package = pkgs.gnome.adwaita-icon-theme;
+  #   size = 24;
+  #   x11 = {
+  #     enable = true;
+  #     defaultCursor = "Adwaita";
+  #   };
+  # };
 
   programs.git = {
     enable = true;

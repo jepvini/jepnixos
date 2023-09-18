@@ -172,6 +172,7 @@ transmission-gtk # definitely not for torrents
 virt-manager # virtual machines
 
 # Non-free
+soulseekqt
 spotify
 telegram-desktop
 
@@ -191,10 +192,15 @@ rclone-browser
 # Python
 (python3.withPackages(ps: with ps; [
   i3ipc
+  tkinter
 ]))
 
 # Nodejs
 nodejs
+
+# Rust
+cargo
+rustc
 
 # GTK
 # yaru-theme # gtk themej
@@ -210,8 +216,14 @@ nmap # net enumeration
 thc-hydra # ssh and other protocols
 samba # smbclient
 
+# Gtk
+gnome-themes-extra
+gtk-engine-murrine
+
 # gitPkgs
 gitPkgs.nofetch
+gitPkgs.kanagawa-gtk
+gitPkgs.fast-sl
 
 ];
 

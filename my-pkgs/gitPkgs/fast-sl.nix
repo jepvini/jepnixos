@@ -2,6 +2,7 @@
 
 stdenv.mkDerivation rec {
   pname = "sl";
+  version = "5.5";
 
   src = fetchFromGitHub {
     owner = "leo1359531";
@@ -25,13 +26,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "Steam Locomotive runs across your terminal when you type 'sl'";
-    homepage = "http://www.tkl.iis.u-tokyo.ac.jp/~toyoda/index_e.html";
-    license = rec {
-      shortName = "Toyoda Masashi's free software license";
-      fullName = shortName;
-      url = "https://github.com/eyJhb/sl/blob/master/LICENSE";
-    };
-    maintainers = with maintainers; [ eyjhb ];
+    maintainers = with maintainers; [ jep ];
     platforms = platforms.unix;
   };
 }

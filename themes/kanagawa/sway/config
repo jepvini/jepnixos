@@ -27,9 +27,16 @@ client.urgent           $urgent   $urgent    $bg      $urgent   $urgent
 
 # keyboard layout
 input * {
-  tap enabled
     xkb_layout us
 }
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
+    accel_profile flat
+    # dwt enabled
+    dwtp enabled
+}
+
 
 # displays
 set $laptop eDP-1

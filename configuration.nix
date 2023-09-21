@@ -84,6 +84,7 @@ services.pipewire = {
 # If you want to use JACK applications, uncomment this
 jack.enable = true;
   };
+hardware.pulseaudio.extraConfig = "load-module module-zeroconf-discover";
 
 # Set your time zone.
 time.timeZone = "Europe/Rome";

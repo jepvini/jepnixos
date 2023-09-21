@@ -101,6 +101,11 @@ programs.sway = {
   export _JAVA_AWT_WM_NONREPARENTING=1
   '';
 };
+# Avahi
+services.avahi = {
+  enable = true;
+  openFirewall = true;
+};
 
 # Screen sharing sway
 services.dbus.enable = true;
@@ -127,12 +132,14 @@ feh # image viewer
 fortune # random quote generator
 gccgo # C compiler
 git # really?
+gnumake # make command
 grim # screenshots
 jq # JSON processor
 neofetch # system info
 nnn # files manager
 openvpn # vpn client
 pamixer  # set volume
+pulseaudio # for pactl
 ripgrep # rust written grep
 shellcheck # checks shell scripts
 spotifyd # spotify daemon
@@ -165,6 +172,7 @@ vim # backup text editor
 firefox-wayland
 font-manager # useful for choosing glyphs
 libreoffice-qt # libre offive suite
+mpv
 mpvpaper # live wall paper
 pavucontrol # audio control
 thunderbird # mail
@@ -186,13 +194,8 @@ fishPlugins.sponge
 fzf
 grc
 
-rclone
-rclone-browser
-
 # Python
 (python3.withPackages(ps: with ps; [
-  i3ipc
-  tkinter
 ]))
 
 # Nodejs
@@ -201,6 +204,14 @@ nodejs
 # Rust
 cargo
 rustc
+
+# Lua
+lua
+love
+
+# lsp
+clang-tools
+nil
 
 # GTK
 # yaru-theme # gtk themej

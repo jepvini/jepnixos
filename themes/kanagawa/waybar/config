@@ -30,7 +30,7 @@
       "format-wifi": "󰤨  ",
       "tooltip-format-wifi": "󰤨  {essid} ({signalStrength}%)",
       "format-ethernet": "󰦝 ",
-      "format-disconnected": "󰤮" ,
+      "format-disconnected": "󰤮 " ,
       "max-length": 50,
       "on-click": "",
       "tooltip-format": "{ifname}: {ipaddr}/{cidr}",

@@ -26,6 +26,10 @@
     defaultEditor = true;
   };
 
+  programs.tmux = {
+    enable = true;
+  };
+
   # Enable
   programs = {
     fish.enable = true;
@@ -210,16 +214,29 @@
     # nvim
 
     # lsp
-    clang-tools
-    nil
+    nodePackages_latest.bash-language-server # bash
+    ccls # C
+    clang-tools # C, C++
+    lua-language-server # lua
+    nil # nix
+    pyright # python
+    rust-analyzer # rust
+    yaml-language-server # yaml
 
     # formatter
     alejandra # nix
     black # python
-    codespell
-    isort
+    codespell # spell check
+    isort # python
     shellcheck # checks shell scripts
-    stylua
+    stylua # lua
+
+    # tmux
+    tmuxPlugins.catppuccin
+    tmuxPlugins.sensible
+    tmuxPlugins.vim-tmux-navigator
+    tmuxPlugins.weather
+    tmuxPlugins.yank
 
     # GTK
     # yaru-theme # gtk themej

@@ -10,16 +10,6 @@
   virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true;
 
-  # Thunar
-  programs.thunar.enable = true;
-  programs.thunar.plugins = with pkgs.xfce; [
-    thunar-archive-plugin # archives
-    thunar-media-tags-plugin # metadata
-    thunar-volman # volumes management
-  ];
-  services.gvfs.enable = true; # Mount, trash, and other functionalities
-  services.tumbler.enable = true; # Thumbnail support for images
-
   # Neovim
   programs.neovim = {
     enable = true;
@@ -104,11 +94,6 @@
       export _JAVA_AWT_WM_NONREPARENTING=1
     '';
   };
-  # Avahi
-  services.avahi = {
-    enable = true;
-    openFirewall = true;
-  };
 
   # Screen sharing sway
   services.dbus.enable = true;
@@ -122,6 +107,8 @@
   # List packages installed in system profile. To search run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # Test
+    pcmanfm
     # Cli
     alsa-utils # some audio utils like aplay
     bat # cat with colors
@@ -149,12 +136,13 @@
     tree # ls files in folders
     tree-sitter # for nvim
     uwuify # UwU
+    ventoy-full # multi boot USB
     wget # retrieve files using HTTP etc.
 
     #  Archives
     p7zip
     unzip
-    xarchiver # for thunar
+    xarchiver # for file manager
     xz
     zip
 
@@ -172,6 +160,7 @@
     # Gui
     firefox-wayland
     font-manager # useful for choosing glyphs
+    gimp
     libreoffice-qt # libre offive suite
     mpv
     mpvpaper # live wall paper
@@ -258,7 +247,6 @@
 
     # gitPkgs
     gitPkgs.nofetch
-    gitPkgs.kanagawa-gtk
     gitPkgs.fast-sl
   ];
 
@@ -266,17 +254,6 @@
   fonts.fonts = with pkgs; [
     (nerdfonts.override {fonts = ["FiraCode" "ComicShannsMono" "OpenDyslexic"];})
   ];
-
-  # GTK
-  # Oddly, NixOS doesn't have a module for this yet.
-  environment.etc."xdg/gtk-2.0/gtkrc".text = ''
-    gtk-theme-name = "Kanagawa-B"
-  '';
-
-  environment.etc."xdg/gtk-3.0/settings.ini".text = ''
-    [Settings]
-    gtk-theme-name = Kanagawa-B
-  '';
 
   # Bootloader
   services.greetd = {

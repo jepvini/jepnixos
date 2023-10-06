@@ -30,6 +30,10 @@
 
   # Services
   services = {
+    # Avahi
+    avahi = {
+      enable = true;
+    };
     # Dns
     resolved = {
       enable = true;
@@ -108,9 +112,10 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Test
-    pcmanfm
+
     # Cli
     alsa-utils # some audio utils like aplay
+    any-nix-shell # fish with nix-shell
     bat # cat with colors
     bc # calculator -> for the watt script
     cmake # bild system generator
@@ -126,6 +131,7 @@
     jq # JSON processor
     neofetch # system info
     nnn # files manager
+    num-utils # random
     openvpn # vpn client
     pamixer # set volume
     pulseaudio # for pactl
@@ -165,6 +171,7 @@
     mpv
     mpvpaper # live wall paper
     pavucontrol # audio control
+    pcmanfm # file manager
     thunderbird # mail
     transmission-gtk # definitely not for torrents
     virt-manager # virtual machines
@@ -200,7 +207,9 @@
     lua
     love
 
+    #
     # nvim
+    #
 
     # lsp
     nodePackages_latest.bash-language-server # bash
@@ -212,7 +221,7 @@
     rust-analyzer # rust
     yaml-language-server # yaml
 
-    # formatter
+    # formatteri
     alejandra # nix
     black # python
     codespell # spell check
@@ -234,12 +243,13 @@
 
     # HTB
     aircrack-ng # wifi
+    gobuster # file enumeration
     hydra-check # checks hydra modules
     john # hash
     netcat-openbsd # reverse shell
     nmap # net enumeration
-    thc-hydra # ssh and other protocols
     samba # smbclient
+    thc-hydra # ssh and other protocols
 
     # Gtk
     gnome-themes-extra

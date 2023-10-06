@@ -226,6 +226,7 @@
     black # python
     codespell # spell check
     isort # python
+    nodePackages_latest.prettier # prettier
     shellcheck # checks shell scripts
     stylua # lua
 

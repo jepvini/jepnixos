@@ -118,7 +118,7 @@
   users.users.leo = {
     isNormalUser = true;
     description = "leo";
-    extraGroups = ["networkmanager" "wheel" "video" "libvirtd"];
+    extraGroups = ["networkmanager" "wheel" "video" "libvirtd" "docker"];
     shell = pkgs.fish;
     packages = with pkgs; [];
   };

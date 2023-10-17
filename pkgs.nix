@@ -65,7 +65,6 @@
     fish.enable = true;
     light.enable = true; # brightness control
     waybar.enable = true; # bar
-    ssh.startAgent = true; # ssh command
   };
 
   # Services
@@ -108,6 +107,9 @@
         RUNTIME_PM_ON_BAT = "auto";
       };
     };
+
+    # Gnome keyring
+    gnome.gnome-keyring.enable = true;
 
     # Tailscale
     tailscale.enable = false;

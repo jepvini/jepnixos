@@ -6,49 +6,12 @@
   # Use latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # Docker
-  # virtualisation = {
-  #   docker = {
-  #     enable = true;
-  #     rootless = {
-  #       enable = true;
-  #       setSocketVariable = true;
-  #     };
-  #   };
-  # };
-  #
-  # virtualisation.oci-containers.backend = "docker";
-  # virtualisation.oci-containers.containers = {
-  #   plex = {
-  #     image = "lscr.io/linuxserver/plex:latest";
-  #     environment = {
-  #       PUID = "1000";
-  #       PGID = "1000";
-  #       TZ = "Europe/Rome";
-  #       VERSION = "docker";
-  #       PLEX_CLAIM = "#optional";
-  #     };
-  #     volumes = [
-  #       "/home/leo/plex/config:/config"
-  #       "/home/leo/plex/data:/data"
-  #     ];
-  #     autoStart = true;
-  #     ports = [
-  #       "32400:32400"
-  #     ];
-  #   };
-  #   homer = {
-  #     image = "b4bz/homer:latest";
-  #     autoStart = true;
-  #     ports = [
-  #       "8080:8080"
-  #     ];
-  #   };
-  # };
-
   # Virt-Manager
   virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true;
+
+  # SSH angent
+  programs.ssh.startAgent = true;
 
   # Neovim
   programs.neovim = {
@@ -108,11 +71,8 @@
       };
     };
 
-    # Gnome keyring
-    gnome.gnome-keyring.enable = true;
-
     # Tailscale
-    tailscale.enable = false;
+    tailscale.enable = true;
   };
 
   # Sway
@@ -162,7 +122,7 @@
     bc # calculator -> for the watt script
     cmake # bild system generator
     ctags # fast source code browsing
-    exa # fast ls
+    eza # fast ls
     fd # better find
     feh # image viewer
     fortune # random quote generator
@@ -186,6 +146,7 @@
     uwuify # UwU
     ventoy-full # multi boot USB
     wget # retrieve files using HTTP etc.
+    wireguard-tools # wg
 
     #  Archives
     p7zip
@@ -304,7 +265,7 @@
   ];
 
   # Fonts
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["FiraCode" "ComicShannsMono" "OpenDyslexic"];})
   ];
 

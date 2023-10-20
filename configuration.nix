@@ -33,17 +33,28 @@
   };
 
   # Trackpoint sensibility
-  systemd.services.TrackpointSensibility = {
-    enable = true;
-    description = "Set trackpoint sensibility";
-    after = ["multi-user.target"];
-    startLimitBurst = 0;
-    wantedBy = ["multi-user.target"];
-    restartIfChanged = true;
-    serviceConfig = {
-      Type = "oneshot";
-      Restart = "on-failure";
-      ExecStart = "${pkgs.bash}/bin/bash -c '/etc/nixos/services/TrackPointSensitivity'";
+  systemd.services = {
+    TrackpointSensibility = {
+      enable = true;
+      description = "Set trackpoint sensibility";
+      after = ["multi-user.target"];
+      startLimitBurst = 0;
+      wantedBy = ["multi-user.target"];
+      restartIfChanged = true;
+      serviceConfig = {
+        Type = "oneshot";
+        Restart = "on-failure";
+        ExecStart = "${pkgs.bash}/bin/bash -c '/etc/nixos/services/TrackPointSensitivity'";
+      };
+    };
+    Vypr = {
+      enable = true;
+      description = "VyprVPN to Spain";
+      after = ["multi-user.target"];
+      serviceConfig = {
+        Restart = "on-failure";
+        ExecStart = "${pkgs.openvpn}/bin/openvpn /home/leo/Vypr/OpenVPN256/Manga.ovpn";
+      };
     };
   };
 

@@ -132,6 +132,7 @@
     grim # screenshots
     jq # JSON processor
     neofetch # system info
+    nextcloud-client # nextcloud client
     nnn # files manager
     num-utils # random
     openvpn # vpn client
@@ -169,9 +170,9 @@
     # Gui
     firefox-wayland
     font-manager # useful for choosing glyphs
-    gimp
+    gimp # editor
     libreoffice-qt # libre offive suite
-    mpv
+    mpv # media player
     mpvpaper # live wall paper
     pavucontrol # audio control
     pcmanfm # file manager

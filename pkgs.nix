@@ -110,6 +110,10 @@
     extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
+  # Android
+  programs.adb.enable = true;
+  users.users.leo.extraGroups = ["adbusers"];
+
   # List packages installed in system profile. To search run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -131,6 +135,7 @@
     gnumake # make command
     grim # screenshots
     jq # JSON processor
+    lolcat # rainbow
     neofetch # system info
     nextcloud-client # nextcloud client
     nnn # files manager
@@ -168,6 +173,7 @@
     vim # backup text editor
 
     # Gui
+    chromium # chromium
     firefox-wayland
     font-manager # useful for choosing glyphs
     gimp # editor
@@ -176,6 +182,7 @@
     mpvpaper # live wall paper
     pavucontrol # audio control
     pcmanfm # file manager
+    plexamp # plex audio player
     thunderbird # mail
     transmission-gtk # definitely not for torrents
     virt-manager # virtual machines
@@ -217,7 +224,7 @@
 
     # lsp
     nodePackages_latest.bash-language-server # bash
-    ccls # C
+    clang # clang
     clang-tools # C, C++
     lua-language-server # lua
     nil # nix
@@ -234,18 +241,6 @@
     shellcheck # checks shell scripts
     stylua # lua
 
-    # tmux
-    tmuxPlugins.catppuccin
-    tmuxPlugins.sensible
-    tmuxPlugins.vim-tmux-navigator
-    tmuxPlugins.weather
-    tmuxPlugins.yank
-
-    # GTK
-    # yaru-theme # gtk themej
-
-    # Libs
-
     # HTB
     aircrack-ng # wifi
     gobuster # file enumeration
@@ -255,6 +250,12 @@
     nmap # net enumeration
     samba # smbclient
     thc-hydra # ssh and other protocols
+
+    # Android
+    android-tools
+    newt
+    pv
+    srm
 
     # Gtk
     gnome-themes-extra

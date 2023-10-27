@@ -196,8 +196,9 @@
     fishPlugins.done
     fishPlugins.fzf-fish
     fishPlugins.grc
-    fishPlugins.hydro
+    # fishPlugins.hydro
     fishPlugins.puffer
+    fishPlugins.pure
     fishPlugins.sponge
     fzf
     grc

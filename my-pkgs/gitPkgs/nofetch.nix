@@ -31,11 +31,11 @@ stdenvNoCC.mkDerivation {
     owner = "leo1359531";
     repo = "nofetch";
   #   # This is the commit of the theme we download.
-    rev = "5ddce0a2abeacc41e0e4f66d40751d43832413c0";
+    rev = "c02c95c73dbd5ff3d027cd6228a5acba1c71f7bc";
   #   # Nix will check this hash every time it downloads the pkg, to make sure GitHub has not
   #   # sent you a virus instead of the theme (or that the download has not somehow become
   #   # corrupted).
-    hash = "sha256-Zz7Ys8wSnYyr8jioGrRGwtOZErBEJRYZaUUb7khWhJg=";
+    hash = "sha256-CPeWXNxZQYUWEIJ5Ip2TV7pTHFzEYEo+VFudRnaISTY=";
   };
 
   # This is the actual process for "installing" the files into the

@@ -20,7 +20,7 @@ in {
       interactiveShellInit = ''
         any-nix-shell fish --info-right | source
         fish_vi_key_bindings
-       bind -s --preset -M insert jk "if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char repaint-mode; end"
+        bind -s -M insert jk "if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char repaint-mode; end"
       '';
       shellAliases = {
         v = "nvim";

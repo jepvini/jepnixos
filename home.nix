@@ -43,17 +43,10 @@ in {
           variant = "macchiato";
         };
       };
-    };
-
-    qt = {
-      enable = true;
-      platformTheme = "gtk";
-      style.name = "Catppuccin-Macchiato-Compact-Blue-Dark";
-      style.package = pkgs.catppuccin-gtk.override {
-        accents = ["blue"];
-        size = "compact";
-        tweaks = ["rimless" "black"];
-        variant = "macchiato";
+      cursorTheme = {
+        name = "Bibata-Modern-Ice";
+        package = pkgs.bibata-cursors;
+        size = 22;
       };
     };
 

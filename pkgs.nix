@@ -174,6 +174,7 @@
     vim # backup text editor
 
     # Gui
+    baobab # disk space manager
     chromium # chromium
     firefox-wayland
     font-manager # useful for choosing glyphs

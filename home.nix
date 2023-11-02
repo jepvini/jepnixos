@@ -21,6 +21,7 @@ in {
         any-nix-shell fish --info-right | source
         fish_vi_key_bindings
         bind -s -M insert jk "if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char repaint-mode; end"
+        fzf_configure_bindings --directory=\cf
       '';
       shellAliases = {
         v = "nvim";

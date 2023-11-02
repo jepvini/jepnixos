@@ -88,7 +88,7 @@
       sov # workspaces content
       swaybg # bg
       swayidle # idle control
-      swaylock # lock comand
+      swaylock # lock command
       wezterm # terminal
       wf-recorder # screen recording
       wl-clipboard # access to system buffer
@@ -243,7 +243,7 @@
     shellcheck # checks shell scripts
     stylua # lua
 
-   # HTB
+    # HTB
     aircrack-ng # wifi
     gobuster # file enumeration
     hydra-check # checks hydra modules

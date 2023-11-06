@@ -226,11 +226,11 @@
     #
 
     # lsp
-    nodePackages_latest.bash-language-server # bash
     clang # clang
     clang-tools # C, C++
     lua-language-server # lua
     nil # nix
+    nodePackages_latest.bash-language-server # bash
     pyright # python
     rust-analyzer # rust
     yaml-language-server # yaml
@@ -240,6 +240,7 @@
     black # python
     codespell # spell check
     isort # python
+    jq # json
     nodePackages_latest.prettier # prettier
     shellcheck # checks shell scripts
     stylua # lua

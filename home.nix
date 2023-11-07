@@ -66,7 +66,7 @@ in {
         };
         Service = {
           Type = "simple";
-          ExecStart = "${pkgs.nextcloud-client}/bin/nextcloudcmd -n --exclude /home/leo/HomeBK/sync-exclude.lst --path /starless /home/leo  https://scatcat.online";
+          ExecStart = "${pkgs.nextcloud-client}/bin/nextcloudcmd -n --exclude /home/leo/HomeBK/sync-exclude.lst --path /starless /home/leo  https://nextcloud.scatcat.online";
           TimeoutStopSec = "180";
           KillMode = "process";
           KillSignal = "SIGINT";

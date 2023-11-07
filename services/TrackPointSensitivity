@@ -1,1 +1,1 @@
-echo 10 | tee $(find -L /sys/class/input/ -maxdepth 2 -name name -exec grep -l Elan {} \; 2>/dev/null | sed 's/name//')device/sensitivity
+echo 90 | tee $(find -L /sys/class/input/ -maxdepth 2 -name name -exec grep -l Elan {} \; 2>/dev/null | sed 's/name//')device/sensitivity

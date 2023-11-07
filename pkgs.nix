@@ -243,6 +243,7 @@
     jq # json
     nodePackages_latest.prettier # prettier
     shellcheck # checks shell scripts
+    shellharden # shell
     stylua # lua
 
     # HTB

@@ -244,6 +244,7 @@
     isort # python
     jq # json
     nodePackages_latest.prettier # prettier
+    python311Packages.mdformat # python
     stylua # lua
 
     # HTB

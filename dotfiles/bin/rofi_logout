@@ -26,4 +26,3 @@ case $question in
         exit 0  # do nothing on wrong response
         ;;
 esac
-

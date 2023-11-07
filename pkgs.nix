@@ -232,18 +232,18 @@
     nil # nix
     nodePackages_latest.bash-language-server # bash
     pyright # python
+    shellcheck # checks shell scripts
     rust-analyzer # rust
     yaml-language-server # yaml
 
     # formatteri
     alejandra # nix
+    beautysh # sh
     black # python
     codespell # spell check
     isort # python
     jq # json
     nodePackages_latest.prettier # prettier
-    shellcheck # checks shell scripts
-    shellharden # shell
     stylua # lua
 
     # HTB

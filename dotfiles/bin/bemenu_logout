@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-case "$(echo -e "lock\nsuspend\nhibernate\nlogout\nreboot\npoweroff" | bemenu -i -p "power" \
+case "$(echo -e "suspend\nhibernate\nlogout\nreboot\npoweroff\nlogout" | bemenu -i -p "power" \
   -H 34 --fn "ComicShannsMono Nerd Font"\
   --hp 8\
   --cf "#000000"\
@@ -15,10 +15,9 @@ case "$(echo -e "lock\nsuspend\nhibernate\nlogout\nreboot\npoweroff" | bemenu -i
   --ab "#000000"\
   --af "#dcd7ba"\
     )" in
-        lock) exec lock;;
-        suspend) exec swaymsg "output eDP-1 enable" && systemctl suspend;;
-        hibernate) exec swaymsg "output eDP-1 enable" && systemctl hibernate;;
-        logout) exec swaymsg "exit";;
-        reboot) exec  rebooot;;
-        poweroff) exec poweroff;;
+    suspend) exec swaymsg "output eDP-1 enable" && systemctl suspend ;;
+    hibernate) exec swaymsg "output eDP-1 enable" && systemctl hibernate ;;
+    reboot) exec rebooot ;;
+    poweroff) exec poweroff ;;
+    logout) exec swaymsg "exit" ;;
 esac

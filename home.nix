@@ -24,7 +24,7 @@ in {
         fzf_configure_bindings --directory=\cf
       '';
       shellAliases = {
-        v = "nvim .";
+        v = "nvim";
         c = "clear && sl && clear";
         rm = "trash";
         edit = "cd /etc/nixos";

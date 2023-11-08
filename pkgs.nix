@@ -149,7 +149,6 @@
     stdenv # C compilers
     trash-cli # trash for terminal
     tree # ls files in folders
-    tree-sitter # for nvim
     uwuify # UwU
     ventoy-full # multi boot USB
     wget # retrieve files using HTTP etc.
@@ -224,6 +223,7 @@
     #
     # nvim
     #
+    tree-sitter # for nvim
 
     # lsp
     clang # clang

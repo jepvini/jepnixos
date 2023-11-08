@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-case "$(echo -e "suspend\nhibernate\nlogout\nreboot\npoweroff\nlogout" | bemenu -i -p "power" \
+case "$(echo -e "suspend\nhibernate\nreboot\npoweroff\nlogout" | bemenu -i -p "power" \
   -H 34 --fn "ComicShannsMono Nerd Font"\
   --hp 8\
   --cf "#000000"\

@@ -229,11 +229,12 @@
     clang # clang
     clang-tools # C, C++
     lua-language-server # lua
+    marksman # markdown
     nil # nix
     nodePackages_latest.bash-language-server # bash
     pyright # python
-    shellcheck # checks shell scripts
     rust-analyzer # rust
+    shellcheck # checks shell scripts
     yaml-language-server # yaml
 
     # formatteri

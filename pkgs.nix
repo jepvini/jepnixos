@@ -130,6 +130,7 @@
     eza # fast ls
     fd # better find
     feh # image viewer
+    ffmpeg # trascoder
     fortune # random quote generator
     gccgo # C compiler
     git # really?
@@ -184,6 +185,7 @@
     pavucontrol # audio control
     pcmanfm # file manager
     plexamp # plex audio player
+    sonixd # music player
     thunderbird # mail
     transmission-gtk # definitely not for torrents
     virt-manager # virtual machines

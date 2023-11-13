@@ -9,9 +9,10 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./pkgs.nix # Installed pkgs
     ./home.nix # Home Manager
-    ./my-pkgs/default.nix
+    ./my-pkgs
+    ./pkgs.nix # Installed pkgs
+    ./services
   ];
 
   # Defaults apps
@@ -30,32 +31,6 @@
     PATH = [
       "$HOME/.config/bin"
     ];
-  };
-
-  # Trackpoint sensibility
-  systemd.services = {
-    TrackpointSensibility = {
-      enable = true;
-      description = "Set trackpoint sensibility";
-      after = ["multi-user.target"];
-      startLimitBurst = 0;
-      wantedBy = ["multi-user.target"];
-      restartIfChanged = true;
-      serviceConfig = {
-        Type = "oneshot";
-        Restart = "on-failure";
-        ExecStart = "${pkgs.bash}/bin/bash -c '/etc/nixos/services/TrackPointSensitivity'";
-      };
-    };
-    Vypr = {
-      enable = true;
-      description = "VyprVPN to Spain";
-      after = ["multi-user.target"];
-      serviceConfig = {
-        Restart = "on-failure";
-        ExecStart = "${pkgs.openvpn}/bin/openvpn /home/leo/Vypr/OpenVPN256/Manga.ovpn";
-      };
-    };
   };
 
   # Bootloader.

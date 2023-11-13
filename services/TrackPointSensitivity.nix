@@ -27,6 +27,7 @@
       ExecStart = "${pkgs.bash}/bin/bash -c '/etc/services/TrackpointSensitivity.sh'";
     };
   };
+
   environment.etc.trackpoint = {
     target = "services/TrackpointSensitivity.sh";
     text = ''

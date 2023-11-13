@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+notify-send "starting home backup"
+rclone sync --config /home/leo/.config/rclone/rclone.conf -c /home/leo ilmatar:/starless --filter-from /home/leo/.sync-exclude.lst -v && notify-send "backup finished" && exit
+
+notify-send "backup error"

@@ -1,6 +1,7 @@
 {
   imports = [
-    ./VyprVPN.nix
     ./TrackPointSensitivity.nix
+    ./VyprVPN.nix
+    ./home-bk.nix
   ];
 }

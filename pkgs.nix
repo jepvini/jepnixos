@@ -145,6 +145,7 @@
     openvpn # vpn client
     pamixer # set volume
     pulseaudio # for pactl
+    rclone # for nexcloud sync
     ripgrep # rust written grep
     spotifyd # spotify daemon
     stdenv # C compilers

@@ -32,7 +32,7 @@
       persist-tun
       persist-remote-ip
       verify-x509-name es1.vyprvpn.com name
-      auth-user-pass /etc/nixos/services/.auth.txt
+      auth-user-pass /etc/services/.auth.txt
       comp-lzo
       keepalive 10 60
       verb 3

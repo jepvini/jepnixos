@@ -9,7 +9,7 @@
       pkgs.busybox
       pkgs.openvpn
     ];
-    enable = true;
+    enable = false;
     description = "VyprVPN to Spain";
     after = ["multi-user.target"];
     serviceConfig = {

@@ -29,7 +29,7 @@ in {
         rm = "trash";
         edit = "cd /etc/nixos";
         cat = "bat";
-        ilmatar = "ssh vainamoinen@100.99.35.148";
+        ilmatar = "ssh -p 59743 vainamoinen@scatcat.online";
       };
     };
 

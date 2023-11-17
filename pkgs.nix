@@ -147,7 +147,6 @@
     pulseaudio # for pactl
     rclone # for nexcloud sync
     ripgrep # rust written grep
-    spotifyd # spotify daemon
     stdenv # C compilers
     trash-cli # trash for terminal
     tree # ls files in folders
@@ -169,9 +168,7 @@
     # Tui
     bashmount # mount disks
     btop # task manager
-    ncspot # spotify client
     powertop # power usage info
-    spotify-tui # spotify client
     vim # backup text editor
 
     # Gui
@@ -291,6 +288,7 @@
       };
     };
   };
+
   boot.kernelParams = ["quiet"];
   boot.consoleLogLevel = 0;
 }

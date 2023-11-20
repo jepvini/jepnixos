@@ -17,9 +17,9 @@
 
   # Defaults apps
   environment.variables = rec {
-    EDITOR = "neovim";
-    BROWSER = "firefox";
-    TERMINAL = "wezterm";
+    # EDITOR = "neovim";
+    # BROWSER = "firefox";
+    # TERMINAL = "wezterm";
 
     XDG_CACHE_HOME = "$HOME/.cache";
     XDG_CONFIG_HOME = "$HOME/.config";

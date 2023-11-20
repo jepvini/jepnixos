@@ -258,6 +258,10 @@
     samba # smbclient
     thc-hydra # ssh and other protocols
 
+    # Octave
+    (octave.withPackages
+      (opkgs: with opkgs; [symbolic]))
+
     # Android
     android-tools
     newt

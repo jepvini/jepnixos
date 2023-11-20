@@ -36,6 +36,11 @@ window#waybar {
   color: rgba(0, 0, 0, 0.90);
 }
 
+#workspaces button.urgent {
+  background-color: #e82424;
+  color: #dcd7ba;
+}
+
 #custom-power {
   background-color: #7e9cd8;
   color: rgba(0, 0, 0, 0.90);

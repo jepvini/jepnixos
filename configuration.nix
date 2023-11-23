@@ -51,6 +51,11 @@
     };
   };
 
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [5900];
+  };
+
   # Bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;

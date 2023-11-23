@@ -25,10 +25,10 @@ in {
       '';
       shellAliases = {
         v = "nvim";
+        l = "exa -ahl";
         c = "clear && sl && clear";
         rm = "trash";
         edit = "cd /etc/nixos";
-        cat = "bat";
         ilmatar = "ssh -p 59743 vainamoinen@scatcat.online";
       };
     };

@@ -2,6 +2,6 @@
 
 gcc "$1" -Wall -O2 -lm
 
-./a.out
+./a.out "${@:2}"
 
 rm a.out

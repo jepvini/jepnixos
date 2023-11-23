@@ -31,11 +31,20 @@
   };
 
   # Services
+  services.avahi = {
+    nssmdns = true;
+    enable = true;
+    publish = {
+      enable = true;
+      userServices = true;
+      domain = true;
+    };
+  };
   services = {
     # Avahi
-    avahi = {
-      enable = true;
-    };
+    # avahi = {
+    # enable = true;
+    # };
     # Dns
     resolved = {
       enable = true;
@@ -152,6 +161,7 @@
     tree # ls files in folders
     uwuify # UwU
     ventoy-full # multi boot USB
+    wayvnc # vnc server for wayland
     wget # retrieve files using HTTP etc.
     wireguard-tools # wg
 
@@ -177,6 +187,7 @@
     firefox-wayland
     font-manager # useful for choosing glyphs
     gimp # editor
+    kicad # electronic design
     libreoffice-qt # libre offive suite
     mpv # media player
     mpvpaper # live wall paper

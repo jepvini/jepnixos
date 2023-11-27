@@ -140,11 +140,13 @@
     fd # better find
     feh # image viewer
     ffmpeg # trascoder
+    flac # music encoder
     fortune # random quote generator
     gccgo # C compiler
     git # really?
     gnumake # make command
     grim # screenshots
+    helix # test editor written in rust
     jq # JSON processor
     lolcat # rainbow
     neofetch # system info

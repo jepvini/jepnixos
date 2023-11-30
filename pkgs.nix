@@ -232,6 +232,7 @@
     #
     # nvim
     #
+    glow # md previewer
     tree-sitter # for nvim
 
     # lsp

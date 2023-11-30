@@ -4,7 +4,11 @@
   ...
 }: {
   # Use latest kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
+  services.zfs.autoScrub.enable = true; # auto scrub zfs
+  boot.kernelParams = ["nohibernate" "quiet"];
+  boot.consoleLogLevel = 0;
 
   # Virt-Manager
   virtualisation.libvirtd.enable = true;
@@ -25,7 +29,7 @@
 
   # Enable
   programs = {
-    fish.enable = true;
+    zsh.enable = true;
     light.enable = true; # brightness control
     waybar.enable = true; # bar
   };
@@ -142,9 +146,11 @@
     ffmpeg # trascoder
     flac # music encoder
     fortune # random quote generator
+    fzf # fuzzy search
     gccgo # C compiler
     git # really?
     gnumake # make command
+    grc # colours
     grim # screenshots
     helix # test editor written in rust
     jq # JSON processor
@@ -166,6 +172,7 @@
     wayvnc # vnc server for wayland
     wget # retrieve files using HTTP etc.
     wireguard-tools # wg
+    zfs # cool file system
 
     #  Archives
     p7zip
@@ -205,17 +212,6 @@
     soulseekqt
     spotify
     telegram-desktop
-
-    # Fish
-    fishPlugins.done
-    fishPlugins.fzf-fish
-    fishPlugins.grc
-    # fishPlugins.hydro
-    fishPlugins.puffer
-    fishPlugins.pure
-    fishPlugins.sponge
-    fzf
-    grc
 
     # Python
     (python3.withPackages (ps:
@@ -305,7 +301,4 @@
       };
     };
   };
-
-  boot.kernelParams = ["quiet"];
-  boot.consoleLogLevel = 0;
 }

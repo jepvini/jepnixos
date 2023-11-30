@@ -42,6 +42,7 @@
       systemd-boot.configurationLimit = 5; # Limits entry number
     };
   };
+  networking.hostId = "de1b697d"; # for zfs
 
   # Enable networking
   networking = {
@@ -110,7 +111,7 @@
     isNormalUser = true;
     description = "leo";
     extraGroups = ["networkmanager" "wheel" "video" "libvirtd" "docker"];
-    shell = pkgs.fish;
+    shell = pkgs.zsh;
     packages = with pkgs; [];
   };
 

@@ -15,14 +15,8 @@ in {
     */
     home.stateVersion = "23.05";
 
-    programs.fish = {
+    programs.zsh = {
       enable = true;
-      interactiveShellInit = ''
-        any-nix-shell fish --info-right | source
-        fish_vi_key_bindings
-        bind -s -M insert jk "if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char repaint-mode; end"
-        fzf_configure_bindings --directory=\cf
-      '';
       shellAliases = {
         v = "nvim";
         l = "exa -ahl";
@@ -30,6 +24,8 @@ in {
         rm = "trash";
         edit = "cd /etc/nixos";
         ilmatar = "ssh -p 59743 vainamoinen@scatcat.online";
+        ll = "ls -l";
+        update = "sudo nixos-rebuild switch";
       };
     };
 

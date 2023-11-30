@@ -3,6 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   config,
+  options,
   pkgs,
   ...
 }: {
@@ -82,6 +83,8 @@
 
   # Set your time zone.
   time.timeZone = "Europe/Rome";
+  # Sync time
+  networking.timeServers = options.networking.timeServers.default ++ ["ntp1.inrim.it"];
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";

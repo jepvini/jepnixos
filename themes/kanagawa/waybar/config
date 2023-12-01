@@ -3,7 +3,7 @@
   "height": 34,
     "modules-left": ["sway/workspaces"],
     "modules-center": ["clock", "idle_inhibitor"],
-    "modules-right": ["bluetooth", "network", "pulseaudio", "backlight", "custom/temp", "custom/watt", "battery", "custom/power"],
+    "modules-right": ["bluetooth", "network", "pulseaudio", "backlight", "custom/temp", "custom/governor", "custom/watt", "battery", "custom/power"],
 
     "sway/workspaces": {
       "disable-scroll": true,
@@ -26,9 +26,9 @@
     },
 
     "network": {
-      "format-wifi": "󰤨  ",
+      "format-wifi": "󰤨 ",
       "tooltip-format-wifi": "󰤨  {essid} ({signalStrength}%)",
-      "format-ethernet": "󰦝 ",
+      "format-ethernet": "󰦝",
       "format-disconnected": "󰤮 " ,
       "max-length": 50,
       "on-click": "",
@@ -56,7 +56,7 @@
     "backlight": {
       "device": "amd_gpu",
       // "format": "{icon} {percent}%",
-      "format": "{icon} ",
+      "format": "{icon}",
       "tooltip-format": "{icon} {percent}%",
       "format-icons": ["", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
     },
@@ -115,14 +115,20 @@
     "custom/watt": {
       "exec": "watt",
       "interval": 1,
-      "format": " {}",
+      "format": "{}",
+    },
+
+    "custom/governor": {
+      "exec": "governor_checker",
+      "interval": 1,
+      "format": "{}",
     },
 
     "custom/temp":{
       "exec": "cpu_temp",
       "interval": 1,
       "return-type": "json",
-      "format": "{} ",
+      "format": "{}",
       "tooltip-format": "{tooltip}"
     },
 }

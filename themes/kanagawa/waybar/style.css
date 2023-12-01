@@ -106,6 +106,11 @@ window#waybar {
   color: #e82424;
 }
 
+#custom-governor {
+  padding: 0px 8px;
+  color: #dcd7ba;
+}
+
 #custom-watt {
   padding: 0px 8px;
   color: #dcd7ba;

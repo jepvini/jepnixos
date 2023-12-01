@@ -15,8 +15,11 @@ in {
     */
     home.stateVersion = "23.05";
 
-    programs.zsh = {
+    programs.bash = {
       enable = true;
+      enableCompletion = true;
+      bashrcExtra = "nofetch -UwU";
+
       shellAliases = {
         v = "nvim";
         l = "exa -ahl";

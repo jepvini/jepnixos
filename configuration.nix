@@ -34,6 +34,8 @@
     ];
   };
 
+  environment.pathsToLink = ["/share/bash-completion"];
+
   # Bootloader.
   boot = {
     initrd.kernelModules = [];
@@ -114,7 +116,7 @@
     isNormalUser = true;
     description = "leo";
     extraGroups = ["networkmanager" "wheel" "video" "libvirtd" "docker"];
-    shell = pkgs.zsh;
+    shell = pkgs.bash;
     packages = with pkgs; [];
   };
 

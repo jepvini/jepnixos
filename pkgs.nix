@@ -7,7 +7,7 @@
   # boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
   services.zfs.autoScrub.enable = true; # auto scrub zfs
-  boot.kernelParams = ["nohibernate" "quiet"];
+  boot.kernelParams = ["nohibernate" "quiet" "zfs.zfs_arc_max=17179869184"];
   boot.consoleLogLevel = 0;
 
   # Virt-Manager

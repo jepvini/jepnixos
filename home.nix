@@ -23,7 +23,7 @@ in {
       shellAliases = {
         v = "nvim";
         l = "exa -ahl";
-        c = "clear && sl && clear";
+        c = "clear && fast-sl && clear";
         rm = "trash";
         edit = "cd /etc/nixos";
         ilmatar = "ssh -p 59743 vainamoinen@scatcat.online";

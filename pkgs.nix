@@ -152,7 +152,6 @@
 
     # Cli
     alsa-utils # some audio utils like aplay
-    any-nix-shell # fish with nix-shell
     bat # cat with colors
     bc # calculator -> for the watt script
     cmake # bild system generator
@@ -169,12 +168,9 @@
     gnumake # make command
     grc # colours
     grim # screenshots
-    helix # test editor written in rust
     jq # JSON processor
     lolcat # rainbow
     neofetch # system info
-    nextcloud-client # nextcloud client
-    nnn # files manager
     num-utils # random
     openvpn # vpn client
     pamixer # set volume
@@ -188,7 +184,6 @@
     ventoy-full # multi boot USB
     wayvnc # vnc server for wayland
     wget # retrieve files using HTTP etc.
-    wireguard-tools # wg
     zfs # cool file system
 
     #  Archives
@@ -222,11 +217,10 @@
     plexamp # plex audio player
     sonixd # music player
     thunderbird # mail
-    transmission-gtk # definitely not for torrents
     virt-manager # virtual machines
 
     # Non-free
-    soulseekqt
+    geogebra
     spotify
     telegram-desktop
 
@@ -302,6 +296,7 @@
     # gitPkgs
     gitPkgs.nofetch
     gitPkgs.fast-sl
+    gitPkgs.ngspice
   ];
 
   # Fonts

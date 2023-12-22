@@ -1,32 +1,35 @@
-{ lib, stdenv, fetchFromGitHub, ncurses }:
-
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  ncurses,
+}:
 stdenv.mkDerivation rec {
-  pname = "sl";
+  pname = "fast-sl";
   version = "5.5";
 
   src = fetchFromGitHub {
-    owner = "leo1359531";
+    owner = "jepvini";
     repo = "fast-sl";
-    rev = "fc26e340942bf101d66df94cada665f6eade2a69";
-    sha256 = "sha256-n0uLu7s6LtmxVGoPxgbe+gxI12RJrzgSt4ubhaMBJ48=";
+    rev = "4903ab82dbe0f080b5caaf51fa3bd1ec9e7eb3ff";
+    sha256 = "sha256-cmNSPZl3o0XC0qmDT/HviBsETOyGnPmqJFlKLe1DQJc=";
   };
 
-  buildInputs = [ ncurses ];
+  buildInputs = [ncurses];
 
-  makeFlags = [ "CC:=$(CC)" ];
+  makeFlags = ["CC:=$(CC)"];
 
   installPhase = ''
     runHook preInstall
 
-    install -Dm755 -t $out/bin sl
-    install -Dm644 -t $out/share/man/man1 sl.1{,.ja}
+    install -Dm755 -t $out/bin fast-sl
 
     runHook postInstall
   '';
 
   meta = with lib; {
-    description = "Steam Locomotive runs across your terminal when you type 'sl'";
-    maintainers = with maintainers; [ jep ];
+    description = "Fast sl, as normal sl but faster";
+    maintainers = with maintainers; [jep];
     platforms = platforms.unix;
   };
 }

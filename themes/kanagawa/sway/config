@@ -62,8 +62,8 @@ set $browser firefox
 # Your preferred filemanager
 set $filemanager pcmanfm
 # Your preferred application launcher
-set $menu bemenu_exec
-set $power bemenu_logout
+set $menu rofi_run
+set $power rofi_logout
 
 ##
 

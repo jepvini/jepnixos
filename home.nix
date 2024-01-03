@@ -13,12 +13,28 @@ in {
     /*
     The home.stateVersion option does not have a default and must be set
     */
-    home.stateVersion = "23.05";
+    home.stateVersion = "23.11";
 
     programs.bash = {
       enable = true;
       enableCompletion = true;
-      bashrcExtra = "nofetch -UwU";
+      historyControl = [
+        "erasedups"
+        "ignorespace"
+      ];
+      historySize = 10000;
+      historyIgnore = [
+        "l"
+        "cd"
+        "v"
+      ];
+
+      # complete -cf doas enables autocomplete with doas
+      initExtra = ''
+        complete -cf doas
+        bind -s 'set completion-ignore-case on'
+        nofetch -UwU
+      '';
 
       shellAliases = {
         v = "nvim";
@@ -29,6 +45,7 @@ in {
         ilmatar = "ssh -p 59743 vainamoinen@scatcat.online";
         ll = "ls -l";
         update = "sudo nixos-rebuild switch";
+        lsblk= "lsblk -o NAME,FSTYPE,SIZE,FSUSED,LABEL,MOUNTPOINT,RM,RO,UUID";
       };
     };
 

@@ -8,6 +8,7 @@ in {
         kanagawa-gtk = callPackage ./gitPkgs/kanagawa-gtk.nix {};
         ngspice = callPackage ./gitPkgs/ngspice.nix {};
         nofetch = callPackage ./gitPkgs/nofetch.nix {};
+        modprobed-db = callPackage ./gitPkgs/modprobed-db.nix {};
       };
     })
   ];

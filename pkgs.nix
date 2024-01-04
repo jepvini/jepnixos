@@ -76,8 +76,8 @@
       settings = {
         TLP_ENABLE = 1;
 
-        START_CHARGE_THRESH_BAT0 = 75;
-        STOP_CHARGE_THRESH_BAT0 = 80;
+        START_CHARGE_THRESH_BAT0 = 40;
+        STOP_CHARGE_THRESH_BAT0 = 50;
         RUNTIME_PM_ON_BAT = "auto";
 
         TLP_DEFAULT_MODE = "BAT";
@@ -91,13 +91,13 @@
         PLATFORM_PROFILE_ON_AC = "performance";
         PLATFORM_PROFILE_ON_BAT = "low-power";
 
-        CPU_MIN_PERF_ON_AC = "0";
+        CPU_MIN_PERF_ON_AC = "100";
         CPU_MAX_PERF_ON_AC = "100";
         CPU_MIN_PERF_ON_BAT = "0";
-        CPU_MAX_PERF_ON_BAT = "30";
+        CPU_MAX_PERF_ON_BAT = "100";
 
         CPU_BOOST_ON_AC = "1";
-        CPU_BOOST_ON_BAT = "0";
+        CPU_BOOST_ON_BAT = "1";
       };
     };
 
@@ -204,6 +204,7 @@
 
     # Gui
     baobab # disk space manager
+    evince # pdf
     chromium # chromium
     firefox-wayland
     font-manager # useful for choosing glyphs
@@ -214,13 +215,11 @@
     mpvpaper # live wall paper
     pavucontrol # audio control
     pcmanfm # file manager
-    plexamp # plex audio player
     sonixd # music player
     thunderbird # mail
     virt-manager # virtual machines
 
     # Non-free
-    geogebra
     spotify
     telegram-desktop
 
@@ -294,9 +293,10 @@
     gtk-engine-murrine
 
     # gitPkgs
-    gitPkgs.nofetch
     gitPkgs.fast-sl
+    gitPkgs.modprobed-db
     gitPkgs.ngspice
+    gitPkgs.nofetch
   ];
 
   # Fonts

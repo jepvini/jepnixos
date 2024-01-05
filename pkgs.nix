@@ -67,8 +67,6 @@
     };
 
     # Power Management
-    # Thermald
-    thermald.enable = true;
 
     # Tlp
     tlp = {
@@ -156,10 +154,12 @@
     bc # calculator -> for the watt script
     cmake # bild system generator
     ctags # fast source code browsing
+    devmem2 # read from memory
     eza # fast ls
     fd # better find
     feh # image viewer
     ffmpeg # trascoder
+    firestarter # stress test for s-tui
     flac # music encoder
     fortune # random quote generator
     fzf # fuzzy search
@@ -169,15 +169,20 @@
     grc # colours
     grim # screenshots
     jq # JSON processor
+    linuxKernel.packages.linux_6_6.turbostat # cpu stats
     lolcat # rainbow
+    msr-tools # edit cpu parameters
     neofetch # system info
     num-utils # random
     openvpn # vpn client
     pamixer # set volume
+    pciutils # pci ultis
     pulseaudio # for pactl
     rclone # for nexcloud sync
     ripgrep # rust written grep
+    s-tui # cpu monitoring and stress test
     stdenv # C compilers
+    stress-ng # stress test
     trash-cli # trash for terminal
     tree # ls files in folders
     uwuify # UwU
@@ -293,10 +298,12 @@
     gtk-engine-murrine
 
     # gitPkgs
-    gitPkgs.fast-sl
-    gitPkgs.modprobed-db
-    gitPkgs.ngspice
-    gitPkgs.nofetch
+    jep.fast-sl
+    jep.modprobed-db
+    jep.ngspice
+    jep.nofetch
+    jep.setPL
+    jep.jepmap
   ];
 
   # Fonts

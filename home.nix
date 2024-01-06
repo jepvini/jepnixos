@@ -42,10 +42,12 @@ in {
         c = "clear && fast-sl && clear";
         rm = "trash";
         edit = "cd /etc/nixos";
-        ilmatar = "ssh -p 59743 vainamoinen@scatcat.online";
+        ilmatar = "ssh -p 59743 vainamoinen@dreams.scatcat.online";
+        add = "ssh-add ~/.ssh/starless";
+        duu = "du --max-depth=1 -h";
         ll = "ls -l";
         update = "sudo nixos-rebuild switch";
-        lsblk= "lsblk -o NAME,FSTYPE,SIZE,FSUSED,LABEL,MOUNTPOINT,RM,RO,UUID";
+        lsblk = "lsblk -o NAME,FSTYPE,SIZE,FSUSED,LABEL,MOUNTPOINT,RM,RO,UUID";
       };
     };
 

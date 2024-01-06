@@ -11,6 +11,7 @@
   boot.consoleLogLevel = 0;
 
   # Virt-Manager
+  virtualisation.docker.enable = true;
   virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true;
 
@@ -23,10 +24,6 @@
     defaultEditor = true;
   };
 
-  programs.tmux = {
-    enable = true;
-  };
-
   # Enable
   programs = {
     light.enable = true; # brightness control
@@ -34,21 +31,16 @@
   };
 
   # Services
-  services.avahi = {
-    nssmdns = true;
-    enable = true;
-    publish = {
-      enable = true;
-      userServices = true;
-      domain = true;
-    };
-  };
+  # services.avahi = {
+  #   nssmdns = true;
+  #   enable = true;
+  #   publish = {
+  #     enable = true;
+  #     userServices = true;
+  #     domain = true;
+  #   };
+  # };
   services = {
-    # Avahi
-    # avahi = {
-    # enable = true;
-    # };
-    # Dns
     resolved = {
       enable = true;
       fallbackDns = [
@@ -279,6 +271,8 @@
     hydra-check # checks hydra modules
     john # hash
     netcat-openbsd # reverse shell
+    hcxtools # convert hashes
+    hashcat # de-passworder
     nmap # net enumeration
     samba # smbclient
     thc-hydra # ssh and other protocols
@@ -310,6 +304,24 @@
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["FiraCode" "ComicShannsMono" "OpenDyslexic"];})
   ];
+
+  virtualisation.oci-containers = {
+    backend = "docker";
+    containers = {
+      homer = {
+        image = "b4bz/homer";
+        #To build from source, comment previous line and uncomment below
+        #build: .
+        ports = [
+          "127.0.0.1:8080:8080"
+        ];
+        volumes = [
+          "/etc/services/homer:/www/assets"
+        ];
+        user = "1000:100"; # default
+      };
+    };
+  };
 
   # Bootloader
   services.greetd = {

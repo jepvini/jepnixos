@@ -50,14 +50,15 @@
   # Enable networking
   networking = {
     hostName = "starless";
+    wireless.iwd.enable = true;
     networkmanager = {
-      enable = true;
+      enable = false;
     };
   };
 
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [5900];
+    # allowedTCPPorts = [5900];
   };
 
   # Bluetooth

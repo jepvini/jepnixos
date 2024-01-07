@@ -16,6 +16,7 @@
     };
 
     services.homebk = {
+      enable = true;
       path = [
         pkgs.bash
         pkgs.busybox
@@ -23,7 +24,7 @@
         pkgs.libnotify
       ];
       description = "home bk with rclone and nextcloud";
-      wantedBy = ["multi-user.target"];
+      # wantedBy = ["multi-user.target"];
       serviceConfig = {
         User = "leo";
         Environment = "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus";

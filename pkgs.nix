@@ -313,7 +313,7 @@
         #To build from source, comment previous line and uncomment below
         #build: .
         ports = [
-          "127.0.0.1:8080:8080"
+          "127.0.0.1:45728:8080"
         ];
         volumes = [
           "/etc/services/homer:/www/assets"

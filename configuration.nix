@@ -81,7 +81,7 @@
     jack.enable = true;
   };
   # hardware.pulseaudio.enable = true;
-  hardware.pulseaudio.zeroconf.discovery.enable = true;
+  # hardware.pulseaudio.zeroconf.discovery.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Rome";

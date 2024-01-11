@@ -7,7 +7,8 @@
   # boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
   services.zfs.autoScrub.enable = true; # auto scrub zfs
-  boot.kernelParams = ["nohibernate" "quiet" "zfs.zfs_arc_max=17179869184"];
+  boot.kernelParams = ["nohibernate" "quiet"];
+  # boot.kernelParams = ["nohibernate" "quiet" "zfs.zfs_arc_max=17179869184"];
   boot.consoleLogLevel = 0;
 
   # Virt-Manager
@@ -145,9 +146,11 @@
     bat # cat with colors
     bc # calculator -> for the watt script
     cmake # bild system generator
+    cpufetch # fetch cpuinfo
     ctags # fast source code browsing
     devmem2 # read from memory
     eza # fast ls
+    fastfetch # neofetch with more infos
     fd # better find
     feh # image viewer
     ffmpeg # trascoder

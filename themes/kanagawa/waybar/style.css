@@ -28,11 +28,11 @@ window#waybar {
 #workspaces button:hover {
   background: inherit;
   color: rgba(0, 0, 0, 0.90);
-  box-shadow: inset 0 -38px #7e9cd8;
+  box-shadow: inset 0 -38px #dcd7ba;
 }
 
 #workspaces button.focused {
-  background-color: #7e9cd8;
+  background-color: #dcd7ba;
   color: rgba(0, 0, 0, 0.90);
 }
 
@@ -42,7 +42,7 @@ window#waybar {
 }
 
 #custom-power {
-  background-color: #7e9cd8;
+  background-color: #dcd7ba;
   color: rgba(0, 0, 0, 0.90);
   border-radius: 0px;
   margin-right: 0px;

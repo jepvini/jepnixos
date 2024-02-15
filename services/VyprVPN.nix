@@ -11,7 +11,6 @@
     ];
     enable = true;
     description = "VyprVPN to Spain";
-    after = ["multi-user.target"];
     serviceConfig = {
       Restart = "on-failure";
       RestartSec = 30;

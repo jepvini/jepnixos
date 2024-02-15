@@ -1,6 +1,6 @@
 {
   "layer": "bottom",
-  "height": 34,
+  "height": 32,
     "modules-left": ["sway/workspaces"],
     "modules-center": ["clock", "idle_inhibitor"],
     "modules-right": ["bluetooth", "network", "pulseaudio", "backlight", "custom/temp", "custom/governor", "custom/watt", "battery", "custom/power"],

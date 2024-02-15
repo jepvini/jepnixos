@@ -8,12 +8,12 @@ for_window [class="^.*"] border pixel 2, title_format "<b> %class >> %title </b>
 
 # gaps
 gaps inner 0
-gaps outer 4
+gaps outer 0
 
 # colors
 
 # set
-set $main #7e9cd8
+set $main #dcd7ba
 set $inactive #c8c093
 set $fg #dcd7ba
 set $bg #1f1f28

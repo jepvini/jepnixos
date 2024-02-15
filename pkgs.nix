@@ -1,147 +1,11 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
-  # Use latest kernel
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
-  services.zfs.autoScrub.enable = true; # auto scrub zfs
-  boot.kernelParams = ["nohibernate" "quiet"];
-  # boot.kernelParams = ["nohibernate" "quiet" "zfs.zfs_arc_max=17179869184"];
-  boot.consoleLogLevel = 0;
-
-  # Virt-Manager
-  virtualisation.docker.enable = true;
-  virtualisation.libvirtd.enable = true;
-  programs.dconf.enable = true;
-
-  # SSH angent
-  programs.ssh.startAgent = true;
-
-  # Neovim
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
-
-  # Enable
-  programs = {
-    light.enable = true; # brightness control
-    waybar.enable = true; # bar
-  };
-
-  # Services
-  # services.avahi = {
-  #   nssmdns = true;
-  #   enable = true;
-  #   publish = {
-  #     enable = true;
-  #     userServices = true;
-  #     domain = true;
-  #   };
-  # };
-  services = {
-    resolved = {
-      enable = true;
-      fallbackDns = [
-        "208.67.222.222"
-        "2620:119:35::35"
-      ];
-    };
-
-    # Fprint - fingerprint
-    fprintd = {
-      enable = true;
-      tod = {
-        enable = true;
-        driver = pkgs.libfprint-2-tod1-goodix-550a;
-      };
-    };
-
-    # Power Management
-
-    # Tlp
-    tlp = {
-      enable = true;
-      settings = {
-        TLP_ENABLE = 1;
-
-        START_CHARGE_THRESH_BAT0 = 40;
-        STOP_CHARGE_THRESH_BAT0 = 50;
-        RUNTIME_PM_ON_BAT = "auto";
-
-        TLP_DEFAULT_MODE = "BAT";
-
-        CPU_SCALING_GOVERNOR_ON_AC = "performance";
-        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-
-        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-        CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-
-        PLATFORM_PROFILE_ON_AC = "performance";
-        PLATFORM_PROFILE_ON_BAT = "low-power";
-
-        CPU_MIN_PERF_ON_AC = "100";
-        CPU_MAX_PERF_ON_AC = "100";
-        CPU_MIN_PERF_ON_BAT = "0";
-        CPU_MAX_PERF_ON_BAT = "100";
-
-        CPU_BOOST_ON_AC = "1";
-        CPU_BOOST_ON_BAT = "1";
-      };
-    };
-
-    # Tailscale
-    tailscale.enable = true;
-  };
-
-  # Sway
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-    extraPackages = with pkgs; [
-      alacritty # backup terminal
-      bemenu
-      libnotify # notification library
-      mako # notification daemon
-      rofi-wayland # launcher
-      sov # workspaces content
-      swaybg # bg
-      swayidle # idle control
-      swaylock # lock command
-      wezterm # terminal
-      wf-recorder # screen recording
-      wl-clipboard # access to system buffer
-      xwayland # non wayland compatibility
-    ];
-    extraSessionCommands = ''
-      export SDL_VIDEODRIVER=wayland
-      export QT_QPA_PLATFORM=wayland
-      export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
-      export _JAVA_AWT_WM_NONREPARENTING=1
-    '';
-  };
-
-  # Screen sharing sway
-  services.dbus.enable = true;
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    # gtk portal needed to make gtk apps happy
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
-  };
-
-  # Android
-  programs.adb.enable = true;
-  users.users.leo.extraGroups = ["adbusers"];
-
+{pkgs, ...}: {
   # List packages installed in system profile. To search run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Test
 
     # Cli
+    alsa-lib # library for alsa
     alsa-utils # some audio utils like aplay
     bat # cat with colors
     bc # calculator -> for the watt script
@@ -154,6 +18,7 @@
     fd # better find
     feh # image viewer
     ffmpeg # trascoder
+    file # file infos
     firestarter # stress test for s-tui
     flac # music encoder
     fortune # random quote generator
@@ -176,14 +41,17 @@
     rclone # for nexcloud sync
     ripgrep # rust written grep
     s-tui # cpu monitoring and stress test
+    speedtest-cli # internet speed-test
     stdenv # C compilers
     stress-ng # stress test
     trash-cli # trash for terminal
     tree # ls files in folders
+    usbutils # lsusb
     uwuify # UwU
     ventoy-full # multi boot USB
     wayvnc # vnc server for wayland
     wget # retrieve files using HTTP etc.
+    wirelesstools # tools
     zfs # cool file system
 
     #  Archives
@@ -204,8 +72,8 @@
 
     # Gui
     baobab # disk space manager
-    evince # pdf
     chromium # chromium
+    evince # pdf
     firefox-wayland
     font-manager # useful for choosing glyphs
     gimp # editor
@@ -216,8 +84,14 @@
     pavucontrol # audio control
     pcmanfm # file manager
     sonixd # music player
+    strawberry # music payer
     thunderbird # mail
     virt-manager # virtual machines
+
+    # Audio
+    vmpk
+    odin2
+    qpwgraph
 
     # Non-free
     spotify
@@ -322,17 +196,6 @@
           "/etc/services/homer:/www/assets"
         ];
         user = "1000:100"; # default
-      };
-    };
-  };
-
-  # Bootloader
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
-        user = "leo";
       };
     };
   };

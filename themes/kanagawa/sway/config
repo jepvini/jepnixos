@@ -60,7 +60,7 @@ set $term wezterm
 # Your preferred browser
 set $browser firefox
 # Your preferred filemanager
-set $filemanager pcmanfm
+set $filemanager thunar
 # Your preferred application launcher
 set $menu rofi_run
 set $power rofi_logout

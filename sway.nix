@@ -5,7 +5,8 @@
     wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
       alacritty # backup terminal
-      bemenu
+      bemenu # launcher
+      grim # screenshots
       libnotify # notification library
       mako # notification daemon
       rofi-wayland # launcher

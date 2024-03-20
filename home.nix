@@ -79,7 +79,7 @@ in {
     # Theme selector
     imports = [
       ./dotfiles/dotfiles.nix
-      ./themes/kanagawa/kanagawa.nix
+      # ./themes/kanagawa/kanagawa.nix
       # ./themes/rick/rick.nix
     ];
   };

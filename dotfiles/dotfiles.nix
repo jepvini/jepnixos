@@ -11,6 +11,11 @@
       source = ./imgs;
       target = "imgs";
     };
+    "mako" = {
+      recursive = true;
+      source = ./imgs;
+      target = "mako";
+    };
     "neofetch" = {
       recursive = true;
       source = ./neofetch;
@@ -25,6 +30,31 @@
       recursive = true;
       source = ./rick;
       target = "rick";
+    };
+    "rofi" = {
+      recursive = true;
+      source = ./rofi;
+      target = "rofi";
+    };
+    "sway" = {
+      recursive = true;
+      source = ./sway;
+      target = "sway";
+    };
+    "swaylock" = {
+      recursive = true;
+      source = ./swaylock;
+      target = "swaylock";
+    };
+    "waybar" = {
+      recursive = true;
+      source = ./waybar;
+      target = "waybar";
+    };
+    "wezterm" = {
+      recursive = true;
+      source = ./wezterm;
+      target = "wezterm";
     };
   };
 }

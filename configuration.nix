@@ -1,11 +1,10 @@
 {
   imports = [
-    # Include the results of the hardware scan.
     ./audio.nix
     ./boot.nix # boot settings
     ./enable.nix # services and special pkgs
     ./environment.nix # environment settings IMPORTANT
-    ./hardware-configuration.nix
+    ./hardware-configuration.nix # Include the results of the hardware scan.
     ./home.nix # Home Manager
     ./my-pkgs # custom pkgs
     ./network.nix # very important

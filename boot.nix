@@ -11,6 +11,8 @@
       efi.canTouchEfiVariables = true;
       systemd-boot.configurationLimit = 5; # Limits entry number
     };
+    # plymouth.enable = true;
+    # plymouth.theme = "breeze";
   };
 
   # mandatory for zfs

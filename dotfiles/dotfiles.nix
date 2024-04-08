@@ -13,7 +13,7 @@
     };
     "mako" = {
       recursive = true;
-      source = ./imgs;
+      source = ./mako;
       target = "mako";
     };
     "neofetch" = {

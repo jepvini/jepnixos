@@ -50,9 +50,9 @@
 
     # Fprint - fingerprint
     fprintd = {
-      enable = true;
+      enable = false;
       tod = {
-        enable = true;
+        enable = false;
         driver = pkgs.libfprint-2-tod1-goodix-550a;
       };
     };
@@ -65,8 +65,8 @@
       settings = {
         TLP_ENABLE = 1;
 
-        START_CHARGE_THRESH_BAT0 = 40;
-        STOP_CHARGE_THRESH_BAT0 = 50;
+        START_CHARGE_THRESH_BAT0 = 75;
+        STOP_CHARGE_THRESH_BAT0 = 80;
         RUNTIME_PM_ON_BAT = "auto";
 
         TLP_DEFAULT_MODE = "BAT";

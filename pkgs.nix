@@ -81,6 +81,7 @@
     libreoffice-qt # libre offive suite
     mpv # media player
     mpvpaper # live wall paper
+    owncloud-client # gui client for owncloud
     pavucontrol # audio control
     pcmanfm # file manager
     sonixd # music player

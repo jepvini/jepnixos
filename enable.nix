@@ -4,6 +4,10 @@
   virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true;
 
+  # SSH
+  programs.ssh.forwardX11 = true;
+  programs.ssh.setXAuthLocation = true;
+
   # SSH angent
   programs.ssh.startAgent = true;
 

@@ -1,7 +1,7 @@
 {options, ...}: {
   # Defaults apps
   environment.variables = rec {
-    EDITOR = "neovim";
+    EDITOR = "nvim";
     BROWSER = "firefox";
     TERMINAL = "wezterm";
 
@@ -37,9 +37,9 @@
   };
 
   # Configure keymap in X11
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "us";
-    xkbVariant = "";
+    variant = "";
   };
 
   # Configure console keymap

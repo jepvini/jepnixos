@@ -1,4 +1,15 @@
 {pkgs, ...}: {
+  nixpkgs.overlays = let
+    nix-matlab = import (builtins.fetchTarball "https://gitlab.com/doronbehar/nix-matlab/-/archive/master/nix-matlab-master.tar.gz");
+  in [
+    nix-matlab.overlay
+    (
+      final: prev: {
+        # Your own overlays...
+      }
+    )
+  ];
+
   # List packages installed in system profile. To search run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -7,6 +18,7 @@
     # Cli
     alsa-lib # library for alsa
     alsa-utils # some audio utils like aplay
+    autojump # cd command that learns
     bat # cat with colors
     bc # calculator -> for the watt script
     cmake # bild system generator
@@ -44,6 +56,7 @@
     speedtest-cli # internet speed-test
     stdenv # C compilers
     stress-ng # stress test
+    texlive.combined.scheme-full # latex
     trash-cli # trash for terminal
     tree # ls files in folders
     usbutils # lsusb
@@ -95,6 +108,7 @@
     qpwgraph
 
     # Non-free
+    matlab
     spotify
     telegram-desktop
 
@@ -125,6 +139,7 @@
     clang-tools # C, C++
     lua-language-server # lua
     marksman # markdown
+    matlab-language-server # matlab
     nil # nix
     nodePackages_latest.bash-language-server # bash
     pyright # python
@@ -132,7 +147,7 @@
     shellcheck # checks shell scripts
     yaml-language-server # yaml
 
-    # formatteri
+    # formatters
     alejandra # nix
     beautysh # sh
     black # python
@@ -142,6 +157,8 @@
     nodePackages_latest.prettier # prettier
     python311Packages.mdformat # python
     stylua # lua
+    glow # md previewer
+    tree-sitter # for nvim
 
     # HTB
     aircrack-ng # wifi

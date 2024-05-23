@@ -44,7 +44,7 @@ bindswitch lid:off output $laptop enable
 focus_follows_mouse no
 
 # firefox in the scratchpad
-exec /home/leo/.config/sway/firefox.sh
+# exec /home/leo/.config/sway/firefox.sh
 
 ### Variables
 #

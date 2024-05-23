@@ -38,17 +38,18 @@ in {
       '';
 
       shellAliases = {
-        v = "nvim";
-        l = "exa -ahl";
+        add = "ssh-add ~/.ssh/starless";
         c = "clear && fast-sl && clear";
-        rm = "trash";
+        duu = "du --max-depth=1 -h";
         edit = "cd /etc/nixos";
         ilmatar = "ssh -p 59743 vainamoinen@dreams.scatcat.online";
-        add = "ssh-add ~/.ssh/starless";
-        duu = "du --max-depth=1 -h";
+        j = "autojump";
+        l = "exa -ahl";
         ll = "ls -l";
-        update = "sudo nixos-rebuild switch";
         lsblk = "lsblk -o NAME,FSTYPE,SIZE,FSUSED,LABEL,MOUNTPOINT,RM,RO,UUID";
+        rm = "trash";
+        update = "sudo nixos-rebuild switch";
+        v = "nvim";
       };
     };
 

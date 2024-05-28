@@ -13,8 +13,6 @@
   # List packages installed in system profile. To search run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # Test
-
     # Cli
     alsa-lib # library for alsa
     alsa-utils # some audio utils like aplay

@@ -104,6 +104,6 @@
       -----END CERTIFICATE-----
       </ca>
     '';
-    mode = "0755";
+    mode = "0644";
   };
 }

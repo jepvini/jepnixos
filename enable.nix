@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   # Virt-Manager
-  virtualisation.docker.enable = true;
+  virtualisation.docker.enable = false;
   virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true;
 

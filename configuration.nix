@@ -11,6 +11,7 @@
     ./nixConfig.nix # nix settings
     ./pkgs.nix # installed pkgs
     ./services # enabled services
+    ./suspend-and-hibernate.nix # self explanatory
     ./sway.nix # all sway configs
     ./user.nix # user settings
   ];

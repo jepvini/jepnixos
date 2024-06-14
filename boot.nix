@@ -11,19 +11,17 @@
       efi.canTouchEfiVariables = true;
       systemd-boot.configurationLimit = 5; # Limits entry number
     };
-    # plymouth.enable = true;
-    # plymouth.theme = "breeze";
+    initrd.luks.devices.cryptroot.device = "/dev/disk/by-uuid/bc3364ae-b704-4066-923b-e5d27bba867a";
   };
 
-  # mandatory for zfs
-  networking.hostId = "de1b697d";
-
-  # Use latest kernel with zfs support
-  boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
-  services.zfs.autoScrub.enable = true; # auto scrub zfs
-  boot.kernelParams = ["nohibernate" "quiet"];
-  # boot.kernelParams = ["nohibernate" "quiet" "zfs.zfs_arc_max=17179869184"];
   boot.consoleLogLevel = 0;
+
+  powerManagement.enable = true;
+  services.btrfs.autoScrub = {
+    enable = true;
+    interval = "monthly";
+    fileSystems = ["/"];
+  };
 
   # login manager
   services.greetd = {

@@ -13,6 +13,7 @@
   # List packages installed in system profile. To search run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+
     # Cli
     alsa-lib # library for alsa
     alsa-utils # some audio utils like aplay
@@ -21,6 +22,7 @@
     bc # calculator -> for the watt script
     cmake # bild system generator
     cpufetch # fetch cpuinfo
+    cryptsetup # luks
     ctags # fast source code browsing
     devmem2 # read from memory
     eza # fast ls
@@ -187,7 +189,7 @@
     # gitPkgs
     jep.fast-sl
     jep.modprobed-db
-    jep.ngspice
+    # jep.ngspice
     jep.nofetch
     jep.setPL
     jep.jepmap
@@ -198,21 +200,21 @@
     (nerdfonts.override {fonts = ["FiraCode" "ComicShannsMono" "OpenDyslexic"];})
   ];
 
-  virtualisation.oci-containers = {
-    backend = "docker";
-    containers = {
-      homer = {
-        image = "b4bz/homer";
-        #To build from source, comment previous line and uncomment below
-        #build: .
-        ports = [
-          "127.0.0.1:45728:8080"
-        ];
-        volumes = [
-          "/etc/services/homer:/www/assets"
-        ];
-        user = "1000:100"; # default
-      };
-    };
-  };
+  # virtualisation.oci-containers = {
+  #   backend = "docker";
+  #   containers = {
+  #     homer = {
+  #       image = "b4bz/homer";
+  #       #To build from source, comment previous line and uncomment below
+  #       #build: .
+  #       ports = [
+  #         "127.0.0.1:45728:8080"
+  #       ];
+  #       volumes = [
+  #         "/etc/services/homer:/www/assets"
+  #       ];
+  #       user = "1000:100"; # default
+  #     };
+  #   };
+  # };
 }
